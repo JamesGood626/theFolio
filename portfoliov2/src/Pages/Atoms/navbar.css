@@ -1,0 +1,42 @@
+/************
+NAVBAR STYLES
+************/
+
+/*******
+ALL OF THESE STYLES
+AREN'T SPECIFIC TO ABOUT.
+THEY CAN BE APPLIED TO EVERY OTHER PAGE!
+***********/
+
+.about__navbar {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 100%;
+    height: 5em;
+    background-color: #00085b;
+}
+
+ .about__navbar-ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;  
+}
+
+ .about__navbar-ul li { 
+    margin-right: 1.5em;
+    font-size: 1.25em;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 200;
+    color: #f2f2f2;
+} 
+
+#about {
+    color: #00b85c;
+}
+
+@media only screen and (max-width: 440px) {
+    .about__navbar-ul {
+        width: 100%;
+    }    
+}
+

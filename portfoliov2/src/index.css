@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  position: relative;
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+h1, h2, h3, h4, p, ul {
+  font-family: 'Exo 2', sans-serif;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 80%;
+}
+
+ .wrapper-secondary {
+    max-width: 50%;
+    text-align: center;
+  } 
+
+ @media only screen and (max-width: 768px) {
+  .wrapper-secondary {
+    max-width: 80%;
+    text-align: center;
+  }
+} 

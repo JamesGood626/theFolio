@@ -1,0 +1,29 @@
+{
+  "name": "portfoliov2server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "6.11.2",
+    "npm": "3.10.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix portfoliov2",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "concurrently": "^3.5.0",
+    "express": "^4.15.3",
+    "mailgun-js": "^0.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
