@@ -30,6 +30,10 @@
   "devDependencies": {
     "nodemon": "^1.11.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/still-scrubland-76488.git"
+  },
   "keywords": [
     "node",
     "heroku",
