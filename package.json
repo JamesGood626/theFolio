@@ -13,8 +13,12 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix portfoliov2",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -25,5 +29,11 @@
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
-  }
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "create-react-app",
+    "react"
+  ]
 }
