@@ -8,7 +8,6 @@ var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain})
 
 
 
-
 app.use(bodyParser.json())
 
 app.post('/contact/send', (req, res) => {

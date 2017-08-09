@@ -1,4 +1,4 @@
 module.exports = {
-    API_KEY: process.ENV.API_KEY,
-    DOMAIN: process.ENV.DOMAIN
+    API_KEY: process.env.API_KEY,
+    DOMAIN: process.env.DOMAIN
 }
