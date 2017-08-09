@@ -12,8 +12,7 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix portfoliov2",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "James Good",
   "license": "ISC",
@@ -23,21 +22,7 @@
     "express": "^4.15.3",
     "mailgun-js": "^0.12.0"
   },
-  "cacheDirectories": [
-    "node_modules",
-    "react-ui/node_modules"
-  ],
   "devDependencies": {
     "nodemon": "^1.11.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://git.heroku.com/still-scrubland-76488.git"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "create-react-app",
-    "react"
-  ]
+  }
 }

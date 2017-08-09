@@ -5,6 +5,11 @@
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
+  "proxy": {
+    "/email/send": {
+      "target": "http://localhost:5000"
+    }
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "normalize.css": "^7.0.0",
@@ -23,6 +28,5 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
