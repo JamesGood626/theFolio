@@ -5,6 +5,5 @@ import toggleMenuReducer from './toggleMenuReducer'
 
 export default combineReducers({
     emailSuccess: sentEmailReducer,
-    toggle: toggleMenuReducer,
     form: formReducer
 })

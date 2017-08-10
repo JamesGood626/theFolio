@@ -6,7 +6,7 @@
     "react-scripts": "0.9.5"
   },
   "proxy": {
-    "/email/send": {
+    "/contact/send": {
       "target": "http://localhost:5000"
     }
   },

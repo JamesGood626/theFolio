@@ -115,9 +115,11 @@ HERO HEADER TEXT
 }
 
 .home__header-content {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
   width: 100%;
-  transform: translateY(-10%);
+  height: 60%;
 } 
 
 .home__main-header {

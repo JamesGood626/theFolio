@@ -11,8 +11,9 @@ var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain})
 app.use(bodyParser.json())
 
 app.post('/contact/send', (req, res) => {
+  console.log("inside server's post")
   let data = {
-    from: `James Good <postmaster@${domain}>`,
+    from: "James Good <postmaster@" + domain + ">",
     to: 'jamesgoodwebdevelopment@gmail.com',
     subject: 'Hello',
     text: "Name: " + req.body.name + "\n\n" + "Email: " + req.body.email + "\n\n" + 
