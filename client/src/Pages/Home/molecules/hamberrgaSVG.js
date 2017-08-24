@@ -19,7 +19,7 @@ class hamberrgaSVG extends Component {
   }
   
   animateMenu() {    
-    console.log('In animateMenu before tl.play and tl.reverse: ' + this.props.toggle)
+    // console.log('In animateMenu before tl.play and tl.reverse: ' + this.props.toggle)
     if(this.props.toggle === false) { 
       this.tl.play()
     }

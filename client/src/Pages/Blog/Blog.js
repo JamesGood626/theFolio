@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchPosts } from '../../actions'
+// import { connect } from 'react-redux'
+// import { fetchPosts } from '../../actions'
 import './organisms/navbar.css'
 import Navbar from './organisms/navbar.js'
 
@@ -22,9 +22,10 @@ class Blog extends Component {
   }
 }
 
+export default Blog
 
-function mapStateToProps({ posts }) {
-  return { posts }
-}
+// function mapStateToProps({ posts }) {
+//   return { posts }
+// }
 
-export default connect(mapStateToProps, { fetchPosts })(Blog)
+// export default connect(mapStateToProps, { fetchPosts })(Blog)

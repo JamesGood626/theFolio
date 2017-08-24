@@ -14,16 +14,17 @@ class Modal extends Component {
     
     this.state = {
       featherCircle: [],
-      githubCircle: []
+      featherIcon: '',
+      githubCircle: [],
+      redirect: false
     }
   }
 
   componentDidMount() {
     document.body.classList.add('modal-open')
-
     // console.log(this.featherCircle) still had access to these here, so I set them to state,
     // console.log(this.githubCircle)  so that circleTransition can make reference to it. And it works...
-    console.log(this.featherIcon)
+    // console.log(this.featherIcon)
     this.setState({
       featherCircle: this.featherCircle,
       featherIcon: this.featherIcon,
@@ -36,12 +37,11 @@ class Modal extends Component {
   }
 
   circleTransition() {
-    console.log('Inside circleTransition: ' + this.state.featherCircle)
+    // console.log('Inside circleTransition: ' + this.state.featherCircle)
 
     TweenMax.to(this.state.featherIcon, 0, { opacity: 0 })
     TweenMax.to(this.state.featherCircle, 4, { position: "absolute", zIndex: 3000,  height: '2000px', width: '2000px', scaleX: '-15%', scaleY: '-15%' })
   }
-
   
   render() {
     return (
@@ -55,7 +55,9 @@ class Modal extends Component {
              </Link> 
              </div>
              <div className="github-circle-container">
+            <a href="https://github.com/JamesGood626">
             <ModalMenuItem circId="github-circle" imgId="github-icon" icon={ GithubIcon } altText="github icon" />
+            </a>
             </div>
             
           </div>

@@ -68,7 +68,7 @@ HERO HEADER TEXT
   width: 80%;
   height: 40%; 
   margin-left: -5%;
-  /* background-color: blue;       */
+  /* background-color: blue;        */
 }
 
 /*Necessary to ensure that modal menu text 
@@ -171,18 +171,14 @@ doesn't shift upon circle animation*/
     flex-grow: .4;
   }
 
-   .feather-circle-container, #feather-menu-link {
-    margin-bottom: 3rem;
+  .feather-circle-container, .github-circle-container {
+    margin-bottom: 2rem;
+    height: 5rem;
+    width: 5rem;
   }
 }
 
-@media screen and (min-width: 480px) {
-  
-}
 
-#feather-circle:hover #github-menu-link {
-  color: #00b85c;
-}
 
 /* hamberrgaSVG Styles */
 
