@@ -5,52 +5,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-image: url('../../Img/hero_460.png');
   background-position: center center;
-  background-size: cover;   
-}
-
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  background-color: #d40000;
-  opacity: 0.3s;
-  z-index: 1000;
-}
-
-.home__menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 auto;
-  margin-bottom: auto;
-  margin-top: 1rem;
-  height: 5rem;
-}
-
-.home__menu-line {
-  height: 5px;
-  width: 5em;
-  background-color: #f2f2f2;
-  border-radius: 50px;
-  transform: skewX(60deg);
-}
-
-.home__small-menu-line {
-  height: 5px;
-  width: 2.5rem;
-  background-color: #f2f2f2;
-  border-radius: 50px;
-  transform: skewX(130deg);
-}
-
-.home__menu:hover .home__menu-line {
-  background-color: #00b85c;
-}
-
-.home__menu:hover .home__small-menu-line {
-  background-color: #00b85c;
+  background-size: cover;
 }
 
 @media screen and (min-width: 768px) {
@@ -87,6 +45,191 @@
 HERO HEADER TEXT
 ****************/
 
+.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; 
+  background-color: rgba(51, 51, 51, .8);
+  z-index: 2000;
+}
+
+.modal-menu-items-container {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 40%; 
+  margin-left: -5%;
+  /* background-color: blue;       */
+}
+
+/*Necessary to ensure that modal menu text 
+doesn't shift upon circle animation*/
+.feather-circle-container, .github-circle-container {
+  width: 6rem;
+  height: 6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-menu-items-container {
+    width: 70%;
+  }
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .modal-menu-items-container {
+    height: 40%;
+  }
+}
+
+.modal-menu-item {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #00b85c;
+  opacity: 1;
+}
+
+.modal-menu-item:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+/* .menu-link:hover {
+  color: #349283;
+  background-color: #349283;
+} */
+
+.modal-text-group, .modal-icon-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+  align-items: center; 
+  color: #f2f2f2;
+  font-size: 2rem;
+}
+
+.modal-icon-group {
+    flex-grow: .4;
+  }
+
+#feather-icon, #github-icon {
+  filter: invert();
+  width: 3rem;
+  height: 3rem;
+}
+
+.modal-menu-item:hover #feather-icon {
+  filter: contrast(0) sepia(50%) hue-rotate(90deg) brightness(.8) saturate(5);
+}
+
+.modal-menu-item:hover #github-icon {
+  filter: contrast(0) sepia(50%) hue-rotate(90deg) brightness(.8) saturate(5);
+}
+
+/* #feather-circle {
+  position: absolute; 
+  top: 5%;
+  left: 5%;
+}
+
+#github-circle {
+  position: absolute;
+  top: 37%;
+  left: 5%;
+} */
+
+
+@media screen and (max-width: 768px) {
+  .modal-menu-item {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .modal-text-group, .modal-icon-group {
+    justify-content: flex-start; 
+    align-items: center;   
+    color: #f2f2f2; 
+    font-size: 1.5rem;
+  }
+
+  .modal-icon-group {
+    flex-grow: .4;
+  }
+
+   .feather-circle-container, #feather-menu-link {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  
+}
+
+#feather-circle:hover #github-menu-link {
+  color: #00b85c;
+}
+
+/* hamberrgaSVG Styles */
+
+/* This is being used to prevent the hamberrga menu from being blurred out
+when applying blur behind modal opening */
+.svgPositionAide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.svg-box {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  z-index: 2001;
+}
+
+/* This absolute position coupled with .svg-box's relative position
+helps center the svg due to the odd size of it's viewport required to
+facilitate visibility throughout the animation*/
+.svg-view {
+  position: absolute;
+  top: -8px;
+  left: -40px;
+}
+
+.hamberrga {
+  fill: #f2f2f2;
+}
+
+.svg-box:hover .hamberrga {
+  fill: #00b85c; 
+}
+
+#bar-1, #bar-2, #bar-3 {
+  fill: #f2f2f2 
+}
+
+/* End HamberrgaSVG styles */
+
+
+
+
 .home__main-header, .home__secondary-header {
   color: #00b85c;
   font-family: 'Exo 2', sans-serif;
@@ -99,7 +242,7 @@ HERO HEADER TEXT
 .home__main-header {
   font-weight: 300;
   margin-bottom: 0.625rem;
-  margin-top: 7.5rem;
+  margin-top: 8rem;
 }
 
 .home__secondary-header {
@@ -119,7 +262,7 @@ HERO HEADER TEXT
   flex-direction: column;
   align-self: center;
   width: 100%;
-  height: 60%;
+  height: 60vh;
 } 
 
 .home__main-header {
@@ -128,6 +271,23 @@ HERO HEADER TEXT
 
 .home__secondary-header {
   font-size: 2.25rem;
+}
+
+@media screen and (max-width: 480px) {
+  .home__main-header {
+    font-size: 2.75rem;
+  }
+
+  .home__secondary-header {
+    font-size: 1.5rem;
+  }
+
+    .home__separation-line {
+    width: 18rem;
+    height: 2px;
+    margin: 0 auto;
+    background-color: rgba(242,242,242,.4);
+  }
 }
 
 
@@ -225,7 +385,7 @@ About section
   text-align: center;
   color: #00053C;
   font-size: 2.25rem;
-  margin-top: 1rem;
+  margin-top:  3.125rem;
   margin-bottom: .3rem;
 }
 
@@ -295,7 +455,7 @@ Contact section
 *****************/
 
 .contact {
-    background-color: #00053C;
+  background-color: #00053C;
 }
 
 .contact__title {
@@ -305,9 +465,9 @@ Contact section
 }
 
 .contact__title-separator-line {
-    width: 11.25em;
-    height: 1px;
-    background-color: #00b85c;
+  width: 11.25em;
+  height: 1px;
+  background-color: #00b85c;
 }
 
 .contact__body {
@@ -481,3 +641,35 @@ input:focus, .form textarea:focus {
 
 }
 
+
+
+
+/************************
+PAGE TRANSITIONS
+************************/
+
+.fadeTransition-enter {
+  opacity: 0;
+}
+
+.fadeTransition-enter.fadeTransition-enter-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+
+.fadeTransition-exit {
+  opacity: 1;
+}
+
+.fadeTransition-exit.fadeTransition-exit-active {
+  opacity: 0;
+  transition: opacity 800ms ease-in;
+}
+
+ .fix-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} 

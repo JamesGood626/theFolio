@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
-import sentEmailReducer from './sentEmailReducer'
+import sendEmailReducer from './sendEmailReducer'
+import toggleMenuReducer from './toggleMenuReducer'
+import postsReducer from './postsReducer'
 
 export default combineReducers({
-    emailSuccess: sentEmailReducer,
-    form: formReducer
+    emailSuccess: sendEmailReducer,
+    form: formReducer,
+    toggle: toggleMenuReducer,
+    posts: postsReducer
 })

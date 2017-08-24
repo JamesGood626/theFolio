@@ -9,7 +9,7 @@ const TechStack = () => {
            <li>Photoshop</li>
            <li>HTML&CSS</li>
            <li>JavaScript</li>
-           <li>React <span>In Progress</span></li>
+           <li>React</li>
           </ul>                                   
         </div>
    )

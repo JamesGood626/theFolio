@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Content from '../molecules/content';
 import Form from './Form'
 
 
-class Contact extends Component {
-  render() {
+
+const Contact = () => {
     return (
       <div className="contact"> {/* the background */}
         <div className="contact__body"> {/* the content */}
@@ -12,8 +12,7 @@ class Contact extends Component {
           <Form />
         </div>
       </div>
-    );
-  }
+    )
 }
 
-export default Contact;
+export default Contact

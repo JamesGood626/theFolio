@@ -1,10 +1,9 @@
-import { SEND_EMAIL } from '../actions/types'
+import { FETCH_POSTS } from '../actions/types'
 
 export default function(state = {}, action) {
-  console.log(action)
     switch (action.type) {
-      case SEND_EMAIL:
-        return true 
+      case FETCH_POSTS:
+        return action.payload
       default:
         return state
     }
