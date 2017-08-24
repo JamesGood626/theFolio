@@ -30,27 +30,6 @@ app.post('/contact/send', (req, res) => {
 
 
 
-// app.get('https://cdn.contentful.com/spaces/o0wcfti34e3q/entries?access_token=90baae4254924c96b4c0bb82e164c9413373ca90b6f4266b2a30dd69bf42b857',
-// (req, res) => {
-//   console.log(res)
-// })
-
-// var contentful = require('contentful')
-// var util = require('util')
-// var client = contentful.createClient({
-//   // This is the space ID. A space is like a project folder in Contentful terms
-//   space: 'o0wcfti34e3q',
-//   // This is the access token for this space. Normally you get both ID and the token in the Contentful web aprequire("contentful")p
-//   accessToken: '90baae4254924c96b4c0bb82e164c9413373ca90b6f4266b2a30dd69bf42b857'
-// })
-
-// client.getEntries()
-// .then(function (entries) {
-//   console.log(util.inspect(entries, {depth: null}))
-// })
-
-
-
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'))
 })
