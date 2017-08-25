@@ -47,24 +47,26 @@ class Modal extends Component {
     return (
       <div className="modal">
         <div className="modal-menu-items-container">
-          <div className="modal-icon-group">
+          <div className="modal-group">
             <div className="feather-circle-container">
-             <Link  to='/blog'> 
-             <ModalMenuItem pageTransition={ this.circleTransition } circleRef={ featherCircle => this.featherCircle = featherCircle } 
-                            iconRef={ featherIcon => this.featherIcon= featherIcon } circId="feather-circle" imgId="feather-icon" icon={ FeatherIcon } altText="feather icon" /> 
-             </Link> 
-             </div>
-             <div className="github-circle-container">
-            <a href="https://github.com/JamesGood626">
-            <ModalMenuItem circId="github-circle" imgId="github-icon" icon={ GithubIcon } altText="github icon" />
-            </a>
+              <Link  to='/blog'> 
+                <ModalMenuItem pageTransition={ this.circleTransition } circleRef={ featherCircle => this.featherCircle = featherCircle } 
+                               iconRef={ featherIcon => this.featherIcon= featherIcon } circId="feather-circle" imgId="feather-icon" icon={ FeatherIcon } altText="feather icon" /> 
+              </Link>
             </div>
-            
+            <div className="modal-text-container">
+              <h2 id="feather-menu-link">Blog</h2>
+            </div>
           </div>
-          <div className="modal-text-group">
-            
-            <h2 id="feather-menu-link">Blog</h2>
-            <h2 id="github-menu-link">Github</h2>
+          <div className="modal-group">
+            <div className="github-circle-container">
+              <a href="https://github.com/JamesGood626">
+                <ModalMenuItem circId="github-circle" imgId="github-icon" icon={ GithubIcon } altText="github icon" />
+              </a>
+            </div>
+            <div className="modal-text-container">
+              <h2 id="github-menu-link">Github</h2>
+            </div>
           </div>
         </div>  
       </div>

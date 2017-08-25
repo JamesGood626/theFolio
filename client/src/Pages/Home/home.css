@@ -47,6 +47,7 @@ HERO HEADER TEXT
 
 .modal-open {
   overflow: hidden;
+  position: fixed; 
 }
 
 .modal {
@@ -64,33 +65,41 @@ HERO HEADER TEXT
 
 .modal-menu-items-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 80%;
-  height: 40%; 
-  margin-left: -5%;
-  /* background-color: blue;        */
+  height: 20rem;       
 }
 
 /*Necessary to ensure that modal menu text 
 doesn't shift upon circle animation*/
 .feather-circle-container, .github-circle-container {
-  width: 6rem;
+  display: flex;
+  justify-content: center;
+  width: 50%;
   height: 6rem;
+}
+
+.modal-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  width: 50%;
 }
 
 @media screen and (min-width: 768px) {
   .modal-menu-items-container {
-    width: 70%;
+    width: 50%;
   }
 }
 
-
-
-@media screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) {
   .modal-menu-items-container {
-    height: 40%;
+    height: 16rem;
   }
 }
+
+
 
 .modal-menu-item {
   display: flex;
@@ -114,18 +123,14 @@ doesn't shift upon circle animation*/
   background-color: #349283;
 } */
 
-.modal-text-group, .modal-icon-group {
+.modal-group {
   display: flex;
-  flex-direction: column;
   justify-content: space-around; 
   align-items: center; 
+  flex-grow: 1;
   color: #f2f2f2;
   font-size: 2rem;
 }
-
-.modal-icon-group {
-    flex-grow: .4;
-  }
 
 #feather-icon, #github-icon {
   filter: invert();
@@ -160,21 +165,19 @@ doesn't shift upon circle animation*/
     height: 5rem;
   }
 
-  .modal-text-group, .modal-icon-group {
+  .modal-group {
     justify-content: flex-start; 
     align-items: center;   
     color: #f2f2f2; 
     font-size: 1.5rem;
   }
 
-  .modal-icon-group {
-    flex-grow: .4;
+  .feather-circle-container, .github-circle-container {
+    height: 5rem;
   }
 
-  .feather-circle-container, .github-circle-container {
-    margin-bottom: 2rem;
+  .modal-text-container {
     height: 5rem;
-    width: 5rem;
   }
 }
 
