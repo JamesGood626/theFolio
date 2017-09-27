@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const ModalMenuItem = (props) => {
     return (
       <div id={ props.circId } className="modal-menu-item">

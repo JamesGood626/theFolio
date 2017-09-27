@@ -17,7 +17,7 @@ class hamberrgaSVG extends Component {
     this.tl.add( TweenMax.to(this.bar3, .5, { svgOrigin: "15 5", x: -15, y: 12,  rotation: 310}), "-=0.5" )
   }
   
-  animateMenu() {    
+  animateMenu() {
     // console.log('In animateMenu before tl.play and tl.reverse: ' + this.props.toggle)
     if(this.props.toggle === false) { 
       this.tl.play()

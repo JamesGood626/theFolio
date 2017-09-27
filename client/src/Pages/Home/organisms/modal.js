@@ -15,7 +15,7 @@ class Modal extends Component {
   componentWillUnmount() {
     document.body.classList.remove('modal-open')
   }
-  
+
   render() {
     return (
       <div className="modal">

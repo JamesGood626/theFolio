@@ -12,6 +12,7 @@ import Home from './Pages/Home/Home'
 import Blog from './Pages/Blog/Blog'
 import reducers from './reducers'
 
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 
 const App = () => {
