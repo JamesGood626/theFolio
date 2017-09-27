@@ -146,16 +146,20 @@ doesn't shift upon circle animation*/
   filter: contrast(0) sepia(50%) hue-rotate(90deg) brightness(.8) saturate(5);
 }
 
-/* #feather-circle {
+/*  #feather-circle {
   position: absolute; 
   top: 5%;
   left: 5%;
-}
+} 
 
 #github-circle {
   position: absolute;
   top: 37%;
   left: 5%;
+} */
+
+/* #feather-circle {
+  position: absolute;
 } */
 
 

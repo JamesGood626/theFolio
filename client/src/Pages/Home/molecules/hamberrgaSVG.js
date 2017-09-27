@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import ReactTransitionGroup from 'react-addons-transition-group'
 import { toggleMenu } from '../../../actions'
 import { connect } from 'react-redux'
 import { TweenMax, TimelineMax } from 'gsap'
