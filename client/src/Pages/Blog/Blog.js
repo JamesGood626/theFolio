@@ -6,8 +6,6 @@ import Navbar from './organisms/navbar.js'
 // import axios from 'axios'
 
 
-
-
 class Blog extends Component {
   // constructor(props) {
   //   super(props)
