@@ -8,7 +8,6 @@ import IconRow from './organisms/iconRow'
 import About from './organisms/about'
 import Contact from './organisms/contact'
 
-
 class Home extends Component {
   // This is set to ensure that the modal menu circle item isn't expanded upon going back
   componentWillUnmount() {
