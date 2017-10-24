@@ -23,6 +23,10 @@ const Div = styled.div`
 	  }
 `
 
+const H1 = styled.h1`
+    font-size: 2.4rem;
+`
+
 
 // The last requirement fulfilled!
  //This successfully grabs the key from the url so the blog post can be fetched 
@@ -38,12 +42,11 @@ class BlogPost extends Component {
   constructor(props) {
     super(props)
 
-    
     this.state = {
       post: null
     }
-
   }
+
 
   componentWillMount() {
     let parsedUrl = this.props.location.pathname.replace(/^\/\w+\//, "").trim()
@@ -55,12 +58,14 @@ class BlogPost extends Component {
     }
   }
 
+
   render() {
     const cbStyle = {
       'margin': '0 auto',
       'width': '100%',
+      'fontFamily': 'Quattrocento, serif',
+      'fontSize': '1.1rem'
     }
-
 
     const syntax = {
       languages: [
@@ -78,7 +83,7 @@ class BlogPost extends Component {
           <Navbar menuItems={navItems} />
             { this.state.post ?
                 <Div>
-                  <h1>{ this.state.post.postStore.postTitle }</h1>
+                  <H1>{ this.state.post.postStore.postTitle }</H1>
                   <Smackdown style={ cbStyle } source={ this.state.post.postStore.postBody } syntax={ syntax }/>
                 </Div>
               : null 

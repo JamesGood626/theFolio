@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { WebGLRenderer } from 'three'
+import { WebGLRenderer, Vector3 } from 'three'
 import Scene from './Scene'
 import Camera from './Camera'
 import Lights from './Lights'
@@ -26,11 +26,13 @@ class Renderer extends Component {
     }
 
     this.renderer = new WebGLRenderer({ antialias: true })
+    this.threeVector = new Vector3(-11, -12.5, 0)
 
     this.animate = this.animate.bind(this)
     this.threeRender = this.threeRender.bind(this)
     this.getCamera = this.getCamera.bind(this)
     this.getScene = this.getScene.bind(this)
+    this.isTouchDevice = this.isTouchDevice.bind(this)
     this.onWindowResize = this.onWindowResize.bind(this)
     this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this)
   }
@@ -99,15 +101,35 @@ class Renderer extends Component {
 
   animate() {
     let { animate, threeRender } = this
-    
+    let { scene } = this.state
+
     this.animationLoop = requestAnimationFrame(animate)
     threeRender()
   }
 
 
   threeRender() {
-    let { renderer } = this
+    let { renderer, threeVector } = this
     let { camera, scene, mouseX, mouseY } = this.state
+
+    if(this.isTouchDevice()) {
+      if(camera.position) {
+        let timer = Date.now() * 0.0005
+
+        // Just messing with the sin and cos values based off of different combos I've seen
+        // Need to get a better conceptualization of this.
+        // However, this effect is better than the x = cos * 120 and z = sin * 120
+        camera.position.x = Math.sin(timer) * 120 * Math.cos(timer)
+        camera.position.z = Math.sin(timer) * 120 * Math.sin(timer)
+
+        camera.lookAt( scene.position )
+
+        // camera.position.x = x * Math.cos(.1) + z * Math.sin(.1)
+        // camera.position.z = z * Math.cos(.1) - x * Math.sin(.1)
+      }
+    }
+
+    
 
     camera.position.x += (mouseX/16 - camera.position.x) * .10
     camera.position.y += (-mouseY/16 - camera.position.y) * .10
@@ -123,6 +145,13 @@ class Renderer extends Component {
 
   getScene(prop) {
     this.setState(state => ({ ...state, scene: prop }))
+  }
+
+
+  isTouchDevice() {
+    return (('ontouchstart' in window)
+      || (navigator.MaxTouchPoints > 0)
+      || (navigator.msMaxTouchPoints > 0));
   }
 
 

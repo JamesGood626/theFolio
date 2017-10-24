@@ -87,7 +87,7 @@ class Blog extends Component {
   render() {
     const mdStyled = {
       'padding': '0 1rem 0 1rem',
-      'font-family': 'Quattrocento, serif'
+      'fontFamily': 'Quattrocento, serif'
     }
 
     const linkStyle = { 

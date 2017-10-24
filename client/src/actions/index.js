@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { SEND_EMAIL } from './types'
-import { STORE_KEY } from './types'
 import { FETCH_POSTS } from './types'
 
 const BASE_URL = 'https://cdn.contentful.com/'
@@ -14,14 +13,6 @@ export const sendEmail = (values) => async dispatch => {
   const req = await axios.post('/contact/send', values)
 
   dispatch({ type: SEND_EMAIL, payload: req })
-}
-
-
-export const storeKey = (key) => async dispatch => {
-	console.log('from inside storeKey')
-	console.log(key)
-	dispatch({ type: STORE_KEY, payload: key})
-	return key
 }
 
 

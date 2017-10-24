@@ -45,6 +45,15 @@ const P = styled.p`
   }
 `
 
+const A = styled.a`
+  text-decoration: none;
+  color: #35e0f0;
+
+  &:hover {
+    color: #d0ccd0;
+  }
+`
+
 // Just Need to add the content and maybe style it for text proportions
 // Other than that, this page is done.
 
@@ -64,6 +73,7 @@ const About = () => {
                 to become more proficient at solving algorithms, threejs, and TDD; or anything else that 
                 may be necessary to complete a project. I'll be blogging about my future learning experiences, 
                 don't mind the three test posts at the moment, it'll soon be filled with glorious knowledge.
+                Here is my <A href="https://github.com/JamesGood626">github</A> if you'd like to see some of my code.
               </P>
             </Div>  
           </Image> 
