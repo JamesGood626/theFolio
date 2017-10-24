@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { WebGLRenderer, Vector3 } from 'three'
+import { WebGLRenderer } from 'three'
 import Scene from './Scene'
 import Camera from './Camera'
 import Lights from './Lights'
@@ -26,7 +26,6 @@ class Renderer extends Component {
     }
 
     this.renderer = new WebGLRenderer({ antialias: true })
-    this.threeVector = new Vector3(-11, -12.5, 0)
 
     this.animate = this.animate.bind(this)
     this.threeRender = this.threeRender.bind(this)
@@ -101,7 +100,6 @@ class Renderer extends Component {
 
   animate() {
     let { animate, threeRender } = this
-    let { scene } = this.state
 
     this.animationLoop = requestAnimationFrame(animate)
     threeRender()
@@ -109,7 +107,7 @@ class Renderer extends Component {
 
 
   threeRender() {
-    let { renderer, threeVector } = this
+    let { renderer } = this
     let { camera, scene, mouseX, mouseY } = this.state
 
     if(this.isTouchDevice()) {
@@ -123,13 +121,8 @@ class Renderer extends Component {
         camera.position.z = Math.sin(timer) * 120 * Math.sin(timer)
 
         camera.lookAt( scene.position )
-
-        // camera.position.x = x * Math.cos(.1) + z * Math.sin(.1)
-        // camera.position.z = z * Math.cos(.1) - x * Math.sin(.1)
       }
     }
-
-    
 
     camera.position.x += (mouseX/16 - camera.position.x) * .10
     camera.position.y += (-mouseY/16 - camera.position.y) * .10
@@ -168,7 +161,6 @@ class Renderer extends Component {
   onWindowResize(event) {
     let { camera } = this.state
     let { renderer } = this
-
 
     let newHalfX = (window.innerWidth/2)
     let newHalfY = (window.innerHeight/2)
