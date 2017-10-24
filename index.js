@@ -24,6 +24,8 @@ app.post('/contact/send', (req, res) => {
   }
  
   mailgun.messages().send(data, function (error, body) {
+    console.log('inside mailguns error logs')
+    console.log(error)
     console.log(body)
   })
 })

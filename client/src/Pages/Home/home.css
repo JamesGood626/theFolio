@@ -475,13 +475,19 @@ Contact section
   align-items: center;
 }
 
+
+
+
+
 .form {
   display: flex;
   flex-direction: column;
   align-items: center; 
-  font-weight: 200;  
+  font-weight: 200;
 }
 
+
+/*styles transferred to StyledInput SC*/
 input {
   position: relative;
   margin-top: 1.875rem;
@@ -494,9 +500,11 @@ input {
   border-radius: 0.625rem;
   transition: border 0.1s;
   color: #f2f2f2;
-}
+}/*styles transferred to StyledInput SC*/
 
-.form textarea {
+
+
+ .form textarea {
   width: 50vw;
   height: 20vh; 
   border-radius: 0.625rem;
@@ -510,7 +518,7 @@ input {
   transition: border 0.1s;
   color: #f2f2f2;
   resize: none;
-}
+} 
 
 
 #name__label, #email__label, #phone-number__label,
@@ -521,13 +529,20 @@ input {
   top: 1.25rem;
 } 
 
+
+
+
+/*styles transferred to StyledInput SC*/
 input:focus, .form textarea:focus {
   outline: none;
   border-bottom: solid 1px #00b85c;
   border-left: solid 1px #00b85c;
   border-right: solid 1px #b3ffd9;
   border-top: solid 1px #b3ffd9;
-}
+}/*styles transferred to StyledInput SC*/
+
+
+
 
 .btn {
   font-weight: 200; 
@@ -547,6 +562,11 @@ input:focus, .form textarea:focus {
   color: #f2f2f2;
 }
 
+
+
+
+
+
 @media screen and (max-width: 768px) {
   .contact {
     background-color: #f2f2f2;
@@ -557,19 +577,19 @@ input:focus, .form textarea:focus {
   {
     color: #00053C;
   }
-
+/*
   #name__label, #email__label, #phone-number__label,
   #current-site__label, #project-deadline__label, 
   #project-info__label {
     color: #00053C;
-  }
+  }*/
 
   input, textarea {
     border-color: #00053C;
     color: #00053C;
   }
 
-   .form textarea {
+  .form textarea {
     border-color: #00053C;
     color: #00053C;
   } 
@@ -615,11 +635,18 @@ input:focus, .form textarea:focus {
     font-weight: 200;
 }
 
-.form-error {
+
+
+
+ .form-error {
   color: #d40000;
   margin-top: -20px;
   margin-bottom: 20px;
-}
+} 
+
+
+
+
 
 .form-email-success {
   font-size: 2.25rem;

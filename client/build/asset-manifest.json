@@ -1,14 +1,16 @@
 {
-  "main.css": "static/css/main.64159f35.css",
-  "main.css.map": "static/css/main.64159f35.css.map",
-  "main.js": "static/js/main.8ba46379.js",
-  "main.js.map": "static/js/main.8ba46379.js.map",
-  "static/media/feather.svg": "static/media/feather.fa80f4dc.svg",
-  "static/media/github.svg": "static/media/github.a6da7d3a.svg",
+  "main.css": "static/css/main.8f94e286.css",
+  "main.css.map": "static/css/main.8f94e286.css.map",
+  "main.js": "static/js/main.3b482318.js",
+  "main.js.map": "static/js/main.3b482318.js.map",
   "static/media/hero_1020.png": "static/media/hero_1020.af53d085.png",
   "static/media/hero_1400.png": "static/media/hero_1400.f18ac7c7.png",
   "static/media/hero_2140.png": "static/media/hero_2140.a80a8bd6.png",
   "static/media/hero_3888.png": "static/media/hero_3888.9f005db6.png",
   "static/media/hero_460.png": "static/media/hero_460.3950b7dd.png",
-  "static/media/hero_768.png": "static/media/hero_768.ccb25792.png"
+  "static/media/hero_768.png": "static/media/hero_768.ccb25792.png",
+  "static/media/moto-350.png": "static/media/moto-350.d1a4a68d.png",
+  "static/media/moto-472.png": "static/media/moto-472.6f3b12d6.png",
+  "static/media/moto-665.png": "static/media/moto-665.61211a20.png",
+  "static/media/moto-828.png": "static/media/moto-828.ab7af361.png"
 }

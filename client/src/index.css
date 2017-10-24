@@ -4,15 +4,18 @@
 
 html, body {
   position: relative;
-  font-family: sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
   height: 100%;
   width: 100%;
-  background-color: #f2f2f2;
+  background-color: #fbfcff;
 }
 
-h1, h2, h3, h4, p, ul {
-  font-family: 'Exo 2', sans-serif;
+canvas {
+  display: block;
 }
+
+/* h1, h2, h3, h4, p, ul {
+} */
 
 .flex-col-center {
   display: flex;
