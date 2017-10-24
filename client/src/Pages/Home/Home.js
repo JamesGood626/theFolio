@@ -1,30 +1,18 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { toggleMenu } from '../../actions'
+import React from 'react'
 import HomeNav from './homeNav'
+import Header from './header'
 import Renderer from './Three/Renderer'
-import './home.css'
 
-
-class Home extends Component {
-  // componentWillUnmount() {
-  //   this.props.toggleMenu(this.props.toggle)   
-  // }
-
-  render() {
+const Home = () => {
     return (
       <div>
         <HomeNav/>
+        <Header/>
         <Renderer/>
       </div>
     )
-  }
 }
 
-function mapStateToProps({ toggle }) {
-  return { toggle }
-}
-
-export default connect(mapStateToProps, { toggleMenu })(Home)
+export default Home
 
 

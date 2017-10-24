@@ -16,7 +16,7 @@ const Div = styled.div`
   margin: 0;
   height: 3rem;
   width: 5.5rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
   position: absolute;
   z-index: 100;
   color: #d0ccd0;
@@ -29,10 +29,9 @@ const Div = styled.div`
     margin: 0;
     height: 5rem;
     width: 7rem;
-    font-size: 1.5rem;
+    font-size: 3rem;
     position: absolute;
     z-index: 100;
-    color: #f2f2f2;
   }
 
   &:hover {
@@ -41,12 +40,10 @@ const Div = styled.div`
 `
 
 const TopLeft = Div.extend`
+  color: #274156;
   top: 0;
   left: 0;
-
-  @media (min-width: 742px) {
-    margin-left: 1rem;
-  }
+  margin-left: -.5rem;
 `
 
 const TopRight = Div.extend`
@@ -54,7 +51,7 @@ const TopRight = Div.extend`
   right: 0;
 
   @media (min-width: 742px) {
-    margin-left: 1rem;
+    margin-right: 1rem;
   }
 `
 
@@ -62,10 +59,6 @@ const BottomLeft = Div.extend`
   bottom: 0;
   left: 0;
   margin-left: -.5rem;
-
-  @media (min-width: 742px) {
-    margin-left: 1rem;
-  }
 `
 
 const BottomRight = Div.extend`

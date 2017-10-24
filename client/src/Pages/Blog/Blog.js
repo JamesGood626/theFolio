@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { fetchPosts } from '../../actions'
 import styled from 'styled-components'
 import Smackdown from 'react-smackdown'
-import './organisms/navbar.css'
 import Navbar from '../Navbar'
 
 
@@ -43,6 +42,8 @@ const TitleDiv = Div.extend`
   // background-color: #fbfcff;
   width: 100%;
   height: 5rem;
+  font-family: 'Quattrocento', serif;
+  font-size: 1rem;
 `
 
 class Blog extends Component {
@@ -85,7 +86,8 @@ class Blog extends Component {
 
   render() {
     const mdStyled = {
-      'padding': '0 1rem 0 1rem'
+      'padding': '0 1rem 0 1rem',
+      'font-family': 'Quattrocento, serif'
     }
 
     const linkStyle = { 
@@ -96,7 +98,6 @@ class Blog extends Component {
     let postsArr = Object.entries(this.props.posts)
     console.log(postsArr)
 
-    // Going to apply default styles the the div with style = { container } for react-motion anim 
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog', active: true}, {name: 'Contact', path: '/contact'}]
     return (
         <div>

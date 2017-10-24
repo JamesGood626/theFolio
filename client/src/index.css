@@ -4,7 +4,7 @@
 
 html, body {
   position: relative;
-  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: 'Tangerine', cursive;
   height: 100%;
   width: 100%;
   background-color: #fbfcff;
@@ -13,29 +13,3 @@ html, body {
 canvas {
   display: block;
 }
-
-/* h1, h2, h3, h4, p, ul {
-} */
-
-.flex-col-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.wrapper {
-  max-width: 80%;
-}
-
- .wrapper-secondary {
-    max-width: 50%;
-    text-align: center;
-  } 
-
- @media only screen and (max-width: 768px) {
-  .wrapper-secondary {
-    max-width: 80%;
-    text-align: center;
-  }
-} 

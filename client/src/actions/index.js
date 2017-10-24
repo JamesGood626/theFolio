@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { SEND_EMAIL } from './types'
-import { TOGGLE_MENU } from './types'
 import { STORE_KEY } from './types'
 import { FETCH_POSTS } from './types'
 
@@ -18,10 +17,6 @@ export const sendEmail = (values) => async dispatch => {
 }
 
 
-export const toggleMenu = (toggleMenu) => async dispatch => {
-  dispatch({ type: TOGGLE_MENU, payload: !toggleMenu })
-}
-
 export const storeKey = (key) => async dispatch => {
 	console.log('from inside storeKey')
 	console.log(key)
@@ -29,8 +24,8 @@ export const storeKey = (key) => async dispatch => {
 	return key
 }
 
-//Should've created the postObj's object literal inside reduce <-- got my nested data structure right, remember that trick
 
+//Should've created the postObj's object literal inside reduce <-- got my nested data structure right, remember that trick
 export const fetchPosts = (key = null) => async dispatch => {
 	const posts = await axios.get(`${BASE_URL}spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}`)
 	// console.log('before the duece')
@@ -50,5 +45,3 @@ export const fetchPosts = (key = null) => async dispatch => {
 		return refinedPosts[key]
 	}
 }
-
-// const posts = await axios.get(`${BASE_URL}spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}`)

@@ -13,6 +13,7 @@ const CenteredForm = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Quattrocento', serif;
 `
 
 // Can prolly break the button out into a separate component later

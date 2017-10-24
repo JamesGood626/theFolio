@@ -12,9 +12,6 @@ const Div = styled.div`
   height: 7rem;
   margin-bottom: 1rem;
   padding: 0 1rem;
-  
-
-  //perhaps pass props in to switch between 50% and 100%
   width: 100%;
 `
 
@@ -24,18 +21,15 @@ const Ul = styled.ul`
   align-items: center;
   padding: 0;
   list-style: none;
-
-  //keeping the width rem for now as it's suitably 
-  //responsive for when the div % needs to be 50%
-  //in the event that a logo is used to the left of it
   width: 24rem;
-
-  //and perhaps the width can be a prop value as well
   height: 100%;
+  font-size: 1.8rem;
 
-  // @media (min-width: 480px) {
-    
-	// }
+
+  @media (min-width: 742px) {
+    font-size: 2.2rem;
+    width: 30rem;
+  }
 `
 
 const Li = styled.li`

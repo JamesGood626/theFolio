@@ -27,20 +27,22 @@ const Div = styled.div`
   width: 100%;
   height: 100%;
   color: #274156;
+  margin-top: 7rem;
 
   @media (min-width: 742px) {
     width: 60%;
   }
 `
 
-const H2 = styled.h2`
-  color: #274156;
-  
-`
-
 const P = styled.p`
   color: #274156;
-  font-size: 1.1rem;
+  font-family: 'Quattrocento', serif;
+  font-size: 1.2rem;
+  line-height: 2rem;
+
+  @media (min-width: 742px) {
+    font-size: 1.4rem;
+  }
 `
 
 // Just Need to add the content and maybe style it for text proportions
@@ -55,7 +57,6 @@ const About = () => {
         <Section>
           <Image image={ images }>
             <Div>
-              <H2>Hi, I'm James</H2>
               <P>
                 From and currently live in Phoenix, Arizona. Code, piano, and motorcycles. That's a high level introduction
                 to my background and interests. I've learned the majority of my web development skills 
