@@ -25,6 +25,9 @@ class Lights extends Component {
     pointLight.intensity = 0.7
   }
 
+  shouldComponentUpdate() {
+    return false
+  }
 
   componentDidMount() {
     let { scene } = this.props

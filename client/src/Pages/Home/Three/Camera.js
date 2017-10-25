@@ -27,6 +27,10 @@ class Camera extends Component {
     this.props.passUpProps(this.camera)
   }
 
+  shouldComponentUpdate() {
+    return false
+  }
+
   componentWillUnmount() {
     this.camera = null
   }

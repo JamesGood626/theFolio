@@ -35,11 +35,11 @@ const P = styled.p`
 `
 
 const Header = () => {
-    return (
-      <Div>
-        <P>React Developer</P>
-      </Div>
-    )
+  return (
+    <Div>
+      <P>React Developer</P>
+    </Div>
+  )
 }
 
 export default Header

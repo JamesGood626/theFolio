@@ -3,8 +3,7 @@ import HomeNav from './homeNav'
 import Header from './header'
 import Renderer from './Three/Renderer'
 
-const Home = ({ match }) => {
-    console.log(match)
+const Home = () => {
     return (
       <div>
         <HomeNav/>

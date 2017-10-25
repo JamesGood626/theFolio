@@ -22,6 +22,9 @@ class Logo extends Component {
     })
   }
 
+  shouldComponentUpdate() {
+    return false
+  }
 
   render() {
     return null
