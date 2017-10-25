@@ -19,7 +19,7 @@ const Div = styled.div`
   font-size: 2rem;
   position: absolute;
   z-index: 100;
-  color: #d0ccd0;
+  color: #828489;
 
   @media (min-width: 742px) {
     display: flex;

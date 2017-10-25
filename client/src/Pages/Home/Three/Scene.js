@@ -21,7 +21,8 @@ class ThreeScene extends Component {
   }
 
   componentWillMount() {
-    this.scene.background = new Color(0x0c0c0c)
+    // 0x0c0c0c may be a bit too dark
+    this.scene.background = new Color(0xfbfcff)
     this.props.passUpProps(this.scene)
   }
 

@@ -13,7 +13,7 @@ import Logo from './Logo'
 class Renderer extends Component {
   constructor(props) {
     super(props)
-    
+
     this.state = {
       camera: null,
       scene: null,

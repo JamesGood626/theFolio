@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reduxThunk from 'redux-thunk'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
 import 'normalize.css'
 import './index.css'
 
@@ -21,13 +22,13 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 const App = () => {
   return (
     <div>
-      <section className="fix-container">
+      <section>
         <Switch >
           <Route exact path="/" component={ Home } />
           <Route exact path="/about" component={ About } />
           <Route exact path="/blog" component={ Blog } />
           <Route exact path="/contact" component={ Contact } />
-          <Route exact path="/blog/:postId" component={ BlogPost } /> 
+          <Route exact path="/blog/:postId" component={ BlogPost } />
         </Switch>
       </section>
     </div>  
