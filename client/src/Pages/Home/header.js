@@ -23,7 +23,7 @@ const Div = styled.div`
 const P = styled.p`
   font-family: 'Tangerine', cursive;
   font-size: 2.2rem;
-  color: #35e0f0;
+  color: #0c0c0c;
 
   @media (min-width: 440px) {
     font-size: 2.6rem;
