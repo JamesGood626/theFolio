@@ -75,10 +75,10 @@ const BottomRight = Div.extend`
 const HomeNav = () => {
     return (
         <div>
-            <Link style={{ 'textDecoration': 'none' }} to="/"><TopLeft>Home</TopLeft></Link>
-            <Link style={{ 'textDecoration': 'none' }} to="/about"><TopRight>About</TopRight></Link>
-            <Link style={{ 'textDecoration': 'none' }} to="/blog"><BottomLeft>Blog</BottomLeft></Link>
-            <Link style={{ 'textDecoration': 'none' }} to="/contact"><BottomRight>Contact</BottomRight></Link>
+          <Link style={{ 'textDecoration': 'none' }} to="/"><TopLeft>Home</TopLeft></Link>
+          <Link style={{ 'textDecoration': 'none' }} to="/about"><TopRight>About</TopRight></Link>
+          <Link style={{ 'textDecoration': 'none' }} to="/blog"><BottomLeft>Blog</BottomLeft></Link>
+          <Link style={{ 'textDecoration': 'none' }} to="/contact"><BottomRight>Contact</BottomRight></Link>
         </div>
     )
 }

@@ -16,21 +16,18 @@ import About from './Pages/About'
 import BlogPost from './Pages/Blog/BlogPost'
 import reducers from './reducers'
 
-
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 
 const App = () => {
   return (
     <div>
-      <section>
-        <Switch >
+        <Switch>
           <Route exact path="/" component={ Home } />
           <Route exact path="/about" component={ About } />
           <Route exact path="/blog" component={ Blog } />
           <Route exact path="/contact" component={ Contact } />
           <Route exact path="/blog/:postId" component={ BlogPost } />
         </Switch>
-      </section>
     </div>  
   )
 }

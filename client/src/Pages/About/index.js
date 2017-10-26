@@ -7,40 +7,43 @@ import moto472 from './moto-472.png'
 import moto665 from './moto-665.png'
 import moto828 from './moto-828.png'
 
-const Section = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 80vh; // just an arbitrary amount that fits the screen to prevent scroll.
-  width: 100%;
-  margin: 0 auto; 
+// const Section = styled.section`
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   height: 80vh; // just an arbitrary amount that fits the screen to prevent scroll.
+//   width: 100%;
+//   margin: 0 auto; 
 
-  @media (min-width: 400px) {
-    height: 85vh;
-  }
-`
+//   @media (min-width: 400px) {
+//     height: 85vh;
+//   }
+// `
 
-const Div = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  color: #274156;
-  margin-top: 7rem;
+// const Div = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100%;
+//   height: 100%;
+//   color: #274156;
+//   margin-top: 7rem;
 
-  @media (min-width: 742px) {
-    width: 60%;
-  }
-`
+//   @media (min-width: 742px) {
+//     width: 60%;
+//   }
+// `
 
 const P = styled.p`
   color: #274156;
   font-family: 'Quattrocento', serif;
   font-size: 1.2rem;
   line-height: 2rem;
+  width: 90%;
+  margin-top: 7rem;
 
   @media (min-width: 742px) {
+    width: 80%;
     font-size: 1.4rem;
   }
 `
@@ -54,8 +57,11 @@ const A = styled.a`
   }
 `
 
-// Just Need to add the content and maybe style it for text proportions
-// Other than that, this page is done.
+// Move navbar into the router so that it's always present for the about, blog, and contact pages
+// and use state to indicate which route is active. That'll make it easier to animate the entire about
+// component.
+
+// Also got rid of the Section and Div... the appear to have been superfluous
 
 const About = () => {
   const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about', active: true}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
@@ -63,9 +69,9 @@ const About = () => {
     return (
       <div>
         <Navbar menuItems={ navItems }/>
-        <Section>
+        {/* <Section> */}
           <Image image={ images }>
-            <Div>
+            {/* <Div> */}
               <P>
                 From and currently live in Phoenix, Arizona. Code, piano, and motorcycles. That's a high level introduction
                 to my background and interests. I've learned the majority of my web development skills 
@@ -75,9 +81,9 @@ const About = () => {
                 don't mind the three test posts at the moment, it'll soon be filled with glorious knowledge.
                 Here is my <A href="https://github.com/JamesGood626">github</A> if you'd like to see some of my code.
               </P>
-            </Div>  
+            {/* </Div>   */}
           </Image> 
-        </Section>
+        {/* </Section> */}
       </div>
     )
 }

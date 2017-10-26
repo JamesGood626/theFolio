@@ -14,6 +14,7 @@ const CenteredForm = styled.form`
   justify-content: center;
   align-items: center;
   font-family: 'Quattrocento', serif;
+  margin-bottom: 1rem;
 `
 
 // Can prolly break the button out into a separate component later

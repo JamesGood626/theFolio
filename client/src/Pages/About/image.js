@@ -6,6 +6,9 @@ const Div = styled.div`
   justify-content: center;
   height: 100%;
   width: 90%;
+  margin: 0 auto;
+  margin-bottom 1rem;
+
   background: url(${(props) => props.image.three }) no-repeat;
 
   @media (min-width: 472px) {
@@ -13,7 +16,7 @@ const Div = styled.div`
   }
 
   @media (min-width: 742px) {
-    height: 100%;
+    height: 100vh;
     width: 80%;
     background: url(${(props) => props.image.six }) no-repeat;
   }
