@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { fetchPosts } from '../../actions'
 import styled from 'styled-components'
 import Smackdown from 'react-smackdown'
-import Navbar from '../Navbar'
+// import Navbar from '../Navbar'
 
 
 const Section = styled.section`
@@ -13,6 +13,7 @@ const Section = styled.section`
   justify-content: center;
   width: 90%;
   margin: 0 auto;
+  margin-top: 1rem;
 
   @media (min-width: 700px) {
     width: 80%;
@@ -95,13 +96,16 @@ class Blog extends Component {
       'color': '#274156' 
     }
 
+    // This line of code is besing executed 7 times now after adding TransitionGroup.
+    // Fix with Pure Component/shouldComponentUpdate
     let postsArr = Object.entries(this.props.posts)
+    console.log('post array being logged')
     console.log(postsArr)
 
-    const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog', active: true}, {name: 'Contact', path: '/contact'}]
+    // const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog', active: true}, {name: 'Contact', path: '/contact'}]
     return (
         <div>
-          <Navbar menuItems={ navItems }/>
+          {/* <Navbar menuItems={ navItems }/> */}
             <Section>
              { postsArr ? 
                  postsArr.map((post, index) => {

@@ -10,7 +10,6 @@ const Div = styled.div`
   position: relative;
   z-index: 100;
   height: 7rem;
-  margin-bottom: 1rem;
   padding: 0 1rem;
   width: 100%;
 `
@@ -41,17 +40,20 @@ const Li = styled.li`
 `
 
 
-const navbar = ({ logo, menuItems }) => {
+const navbar = ({ location, menuItems }) => {
   const active = {
     'color': '#274156'
   }
+  console.log('in navbar')
+  console.log(location)
 
   return(
     <Div>
       <Ul>      
-        { menuItems.map(menuItem => 
-          {
-            return <Link key={ menuItem.name } style={{ 'textDecoration': 'none' }} to={ menuItem.path }><Li style={ menuItem.active ? active : null }>{ menuItem.name }</Li></Link>
+        { menuItems.map(menuItem => {
+            return <Link key={ menuItem.name } style={{ 'textDecoration': 'none' }} to={ menuItem.path }>
+                    <Li style={ (menuItem.path === location.pathname) ? active : null }>{ menuItem.name }</Li>
+                   </Link>
           } 
         )}
       </Ul>
@@ -60,4 +62,3 @@ const navbar = ({ logo, menuItems }) => {
 }
 
 export default navbar
-

@@ -14,7 +14,8 @@ const CenteredForm = styled.form`
   justify-content: center;
   align-items: center;
   font-family: 'Quattrocento', serif;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  width: 100vw;
 `
 
 // Can prolly break the button out into a separate component later
@@ -77,13 +78,11 @@ class Form extends Component {
 
     else {  
       return(
-        <div>
           <CenteredForm onSubmit={handleSubmit(onSubmit)}>
             {this.renderFields()} 
             <Field label="Project Information" name="projectInfo" type="text" component={TextArea} />
             <FormBtn type="submit">Submit</FormBtn>
           </CenteredForm>
-        </div>
       )
     }
   }

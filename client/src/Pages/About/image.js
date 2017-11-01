@@ -7,6 +7,7 @@ const Div = styled.div`
   height: 100%;
   width: 90%;
   margin: 0 auto;
+  margin-top: 1rem;
   margin-bottom 1rem;
 
   background: url(${(props) => props.image.three }) no-repeat;

@@ -4,12 +4,12 @@ import Header from './header'
 import Renderer from './Three/Renderer'
 
 
-const Home = () => {
+const Home = (props) => {
 	return (
 		<div>
 			<HomeNav/>
 			<Header/>
-			<Renderer/>
+			<Renderer location={props}/>
 		</div>
 	)
 }

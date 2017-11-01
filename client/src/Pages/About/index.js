@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import Navbar from '../Navbar'
+// import Navbar from '../Navbar'
 import Image from './image'
 import moto350 from './moto-350.png'
 import moto472 from './moto-472.png'
 import moto665 from './moto-665.png'
 import moto828 from './moto-828.png'
+
+
+// import { findDOMNode } from 'react-dom'
+
+// import { TweenMax } from 'gsap'
 
 // const Section = styled.section`
 //   display: flex;
@@ -37,14 +42,13 @@ import moto828 from './moto-828.png'
 const P = styled.p`
   color: #274156;
   font-family: 'Quattrocento', serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2rem;
   width: 90%;
   margin-top: 7rem;
 
   @media (min-width: 742px) {
     width: 80%;
-    font-size: 1.4rem;
   }
 `
 
@@ -63,12 +67,18 @@ const A = styled.a`
 
 // Also got rid of the Section and Div... the appear to have been superfluous
 
-const About = () => {
-  const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about', active: true}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
-  const images = {'three': moto350,'four': moto472, 'six': moto665, 'eight': moto828}
+class About extends Component {
+  componentDidMount() {
+    console.log(this.props.match)
+  }
+
+  render() {
+    
+    // const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about', active: true}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
+    const images = {'three': moto350,'four': moto472, 'six': moto665, 'eight': moto828}
     return (
       <div>
-        <Navbar menuItems={ navItems }/>
+        {/* <Navbar menuItems={ navItems }/> */}
         {/* <Section> */}
           <Image image={ images }>
             {/* <Div> */}
@@ -86,6 +96,7 @@ const About = () => {
         {/* </Section> */}
       </div>
     )
+  }
 }
 
 export default About

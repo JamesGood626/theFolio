@@ -5,7 +5,7 @@ import Smackdown from 'react-smackdown'
 import { javascript } from 'react-syntax-highlighter/dist/languages'
 import { irBlack } from 'react-syntax-highlighter/dist/styles'
 import styled from 'styled-components'
-import Navbar from '../Navbar'
+// import Navbar from '../Navbar'
 
 
 const Div = styled.div`
@@ -77,10 +77,10 @@ class BlogPost extends Component {
     }
 
     // Create a module that can be exported since you're doing this in two places
-    const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog', active: true}, {name: 'Contact', path: '/contact'}]
+    // const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog', active: true}, {name: 'Contact', path: '/contact'}]
     return (
         <div>
-          <Navbar menuItems={navItems} />
+          {/* <Navbar menuItems={navItems} /> */}
             { this.state.post ?
                 <Div>
                   <H1>{ this.state.post.postStore.postTitle }</H1>
