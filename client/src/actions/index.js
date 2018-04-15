@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { SEND_EMAIL } from './types'
 import { FETCH_POSTS } from './types'
-import { SPACE_ID, ACCESS_TOKEN } from './keys'
+import { SPACE_ID, ACCESS_TOKEN } from './prod_keys'
 
 
 const BASE_URL = 'https://cdn.contentful.com/'
