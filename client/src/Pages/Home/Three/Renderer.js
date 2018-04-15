@@ -5,10 +5,7 @@ import Camera from './Camera'
 import Lights from './Lights'
 import Logo from './Logo'
 
-// Unmounting considerations spread amongst the parent component, and child component's
-// componentWillUnmount lifecycle methods.
-// I've increased the performance a bit, but a deeper understanding of threejs memory management 
-// will help in more complex scenes.
+
 
 class Renderer extends Component {
   constructor(props) {
@@ -65,14 +62,12 @@ class Renderer extends Component {
     document.removeEventListener('mousemove', this.onDocumentMouseMove, false)
 
 
-    //This is a start, but I'll definitely need to flush out the geometry,material,camera,lights disposing
     renderer.dispose()
     renderer.forceContextLoss()
     renderer.context = undefined
     renderer.domElement = undefined
   }
-
-
+  
   // This allows the component to update only on initial load to accomdate
   // Fetching of THREE scene and camera object references
   // After that, all setStates on mouseMove won't trigger a re-render
@@ -114,9 +109,6 @@ class Renderer extends Component {
       if(camera.position) {
         let timer = Date.now() * 0.0005
 
-        // Just messing with the sin and cos values based off of different combos I've seen
-        // Need to get a better conceptualization of this.
-        // However, this effect is better than the x = cos * 120 and z = sin * 120
         camera.position.x = Math.sin(timer) * 120 * Math.cos(timer)
         camera.position.z = Math.sin(timer) * 120 * Math.sin(timer)
 
@@ -192,7 +184,7 @@ class Renderer extends Component {
 
 
   render() {
-    return ( 
+    return (
       <div ref={el => this.container = el}>
         <Camera passUpProps={ this.getCamera }/>
         <Scene passUpProps={ this.getScene }>

@@ -13,19 +13,17 @@ const CenteredForm = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Quattrocento', serif;
   margin-top: 1rem;
   width: 100vw;
 `
 
-// Can prolly break the button out into a separate component later
-// But so far I only need one button
 const FormBtn = styled.button`
     margin: 1.5rem 0;
     padding: 1rem;
     width: 10rem;
     background-color: rgba(0,0,0,0);
     border: 2px solid #35e0f0;
+    font-family: 'Play', sans-serif;
     color: #35e0f0;
     box-shadow: inset 0 0 0 0 #35e0f0;
     transition: .8s ease-out;
@@ -71,18 +69,17 @@ class Form extends Component {
     const onSubmit = (values) => {this.props.sendEmail(values)}
     
     if(submitSucceeded) {
-      return(
+      return (
         <Div>Success!</Div>
       )
     }
-
     else {  
-      return(
-          <CenteredForm onSubmit={handleSubmit(onSubmit)}>
-            {this.renderFields()} 
-            <Field label="Project Information" name="projectInfo" type="text" component={TextArea} />
-            <FormBtn type="submit">Submit</FormBtn>
-          </CenteredForm>
+      return (
+        <CenteredForm onSubmit={handleSubmit(onSubmit)}>
+          {this.renderFields()} 
+          <Field label="Project Information" name="projectInfo" type="text" component={TextArea} />
+          <FormBtn type="submit">Submit</FormBtn>
+        </CenteredForm>
       )
     }
   }

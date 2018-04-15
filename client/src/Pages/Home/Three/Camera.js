@@ -9,10 +9,6 @@ class Camera extends Component {
     this.camera = new PerspectiveCamera(20, window.innerWidth/window.innerHeight, 1, 1000)  
   }
 
-  //Originally had camera.posion.z set to 80 for smaller screens and 50 for larger
-  // but doing that makes vertical and horzontal scroll
-  // I think resizing the model accordingly would be better
-
   componentWillMount() {
     if(window.innerWidth <= 600) {
       this.camera.position.z = 90

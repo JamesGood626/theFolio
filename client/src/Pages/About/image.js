@@ -4,9 +4,9 @@ import styled from 'styled-components'
 const Div = styled.div`
   display: flex;
   justify-content: center;
-  height: 100%;
   width: 90%;
   margin: 0 auto;
+  height: 80vh;
   margin-top: 1rem;
   margin-bottom 1rem;
 
@@ -17,7 +17,7 @@ const Div = styled.div`
   }
 
   @media (min-width: 742px) {
-    height: 100vh;
+    height: 80vh;
     width: 80%;
     background: url(${(props) => props.image.six }) no-repeat;
   }

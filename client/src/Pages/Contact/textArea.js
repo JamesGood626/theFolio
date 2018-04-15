@@ -66,9 +66,3 @@ const TextArea = ({ input, label, name, meta: { error, touched } }) => {
 }
 
 export default TextArea
-
-//From label
-// id={`${ name }__label`}
-
-//From div that was replaced by section(a lot of styling got messed up --> especially w/ textarea)
-// div className="form"
