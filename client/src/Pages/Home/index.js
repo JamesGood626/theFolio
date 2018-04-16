@@ -30,8 +30,8 @@ class Home extends Component {
 				mountComponent: !prevState.mountComponent
 			}))
 		}, 950)
-		document.addEventListener('wheel', this.preventDefaultScroll)
-		// document.addEventListener('scroll', this.preventDefaultScroll)
+		//document.addEventListener('wheel', this.preventDefaultScroll)
+		document.addEventListener('scroll', this.preventDefaultScroll)
 		document.addEventListener('touchmove', this.preventDefaultScroll)
 	}
 
@@ -39,8 +39,8 @@ class Home extends Component {
 		this.setState((prevState, state) => ({
 			mountComponent: !prevState.mountComponent
 		}))
-		document.removeEventListener('wheel', this.preventDefaultScroll)
-		// document.removeEventListener('scroll', this.preventDefaultScroll)
+		//document.removeEventListener('wheel', this.preventDefaultScroll)
+		document.removeEventListener('scroll', this.preventDefaultScroll)
 		document.removeEventListener('touchmove', this.preventDefaultScroll)
 	}
 
