@@ -6,7 +6,6 @@ import Lights from './Lights'
 import Logo from './Logo'
 
 
-
 class Renderer extends Component {
   constructor(props) {
     super(props)
@@ -187,10 +186,13 @@ class Renderer extends Component {
 
 
   render() {
-    console.log("Here is the scene")
-    console.log(this.state.scene)
+    const containerStyle = {
+      'height': '100%',
+      'width': '100%',
+      'position': 'fixed'
+    }
     return (
-      <div ref={el => this.container = el}>
+      <div style={ containerStyle } ref={el => this.container = el}>
         <Camera passUpProps={ this.getCamera }/>
         <Scene passUpProps={ this.getScene }>
           { scene => {
