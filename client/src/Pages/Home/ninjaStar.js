@@ -23,8 +23,8 @@ class NinjaStar extends Component {
   render() {
     return(
       <svg 
-        ref={ x => this.star = x }
         className="ninjaStar"
+        ref={ x => this.star = x }
         onClick={ this.rotateStarAndToggle } 
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 254.96 253.01"
