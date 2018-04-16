@@ -23,20 +23,12 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		const { showLoader } = this.state
-		// Necessary to ensure that the Three.js model doesn't mount during page transition
+		// Necessary to ensure that the Three.js model doesn't mount during the start of the page transition
 		setTimeout(() => {
 			this.setState((prevState, state) => ({
 				mountComponent: !prevState.mountComponent
 			}))
 		}, 950)
-		if (showLoader) {
-			setTimeout(() => {
-				this.setState((prevState, state) => ({
-					showLoader: !prevState.showLoader
-				}))
-			}, 1050)
-		}
 	}
 
 	componentWillUnmount() {
@@ -45,14 +37,23 @@ class Home extends Component {
 		}))
 	}
 
+	toggleLoader = () => {
+		const { showLoader } = this.state
+		if (showLoader) {
+			this.setState((prevState, state) => ({
+				showLoader: !prevState.showLoader
+			}))
+		}
+	}
+
 	render () {
 		const { mountComponent, showLoader } = this.state
 		return (
 			<Div>
 				<Menu/>
 				<Header>Web Developer</Header>
-				{ (showLoader || !mountComponent) && <Loader/> }
-				{ mountComponent && <Renderer/> }
+				 { (showLoader || !mountComponent) && <Loader/> }
+				{ mountComponent && <Renderer toggleLoader={ this.toggleLoader }/> }
 			</Div>
 		)
 	}

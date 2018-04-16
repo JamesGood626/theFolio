@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { SEND_EMAIL } from './types'
 import { FETCH_POSTS } from './types'
-import { SPACE_ID, ACCESS_TOKEN } from './prod_keys'
-
+import SPACE_ID from './config'
+import ACCESS_TOKEN from './config'
+// check your email to resolving heroku config vars on client
 
 const BASE_URL = 'https://cdn.contentful.com/'
 

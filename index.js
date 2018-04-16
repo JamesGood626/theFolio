@@ -13,7 +13,6 @@ app.use(express.static(path.join(__dirname, 'client/build')))
 app.use(bodyParser.json())
 
 app.post('/contact/send', (req, res) => {
-  console.log("inside server's post")
   let data = {
     from: "James Good <postmaster@" + domain + ">",
     to: 'jamesgoodwebdevelopment@gmail.com',
@@ -30,6 +29,11 @@ app.post('/contact/send', (req, res) => {
   })
 })
 
+app.get('/config.js', function(req, res){
+   res.write("var SOME_URL='"+process.env.SPACE_IDL+"'" + '\n')
+   res.write("var API_KEY='"+process.env.ACCESS_TOKEN+"'" + '\n')
+   res.end()
+})
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'))

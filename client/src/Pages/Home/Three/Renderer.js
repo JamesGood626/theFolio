@@ -35,6 +35,9 @@ class Renderer extends Component {
 
 
   componentDidMount() {
+    // ComponentDidMount won't fire until the scene has been retrieved by this.getScene
+    // The set timeout ensures that the model is loaded before loader is removed.
+    setTimeout(this.props.toggleLoader, 2500)
     let { screenWidth, screenHeight } = this.state
     let { renderer } = this
     document.body.appendChild(this.container)
@@ -184,6 +187,8 @@ class Renderer extends Component {
 
 
   render() {
+    console.log("Here is the scene")
+    console.log(this.state.scene)
     return (
       <div ref={el => this.container = el}>
         <Camera passUpProps={ this.getCamera }/>
