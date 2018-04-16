@@ -11,6 +11,7 @@ const Div = styled.div`
 	height: 100%;
 	width: 100%;
 	position: fixed;
+	background-color: blue;
 `
 
 class Home extends Component {
@@ -47,6 +48,7 @@ class Home extends Component {
 	preventDefaultScroll = event => {
 		console.log("event firing")
 		event.preventDefault()
+		event.stopPropagation()
 	}
 
 	toggleLoader = () => {

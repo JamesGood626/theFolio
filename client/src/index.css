@@ -19,7 +19,7 @@ body {
   -webkit-overflow-y: overlay;
   -moz-overflow-y: overlay;
   -ms-overflow-y: overlay;
-  -o-overflow-y: overlay; 
+  -o-overflow-y: overlay;
   /* overflow-y: scroll;
   -webkit-overflow-scrolling: touch; */
 }
