@@ -20,6 +20,7 @@ body {
   -moz-overflow-y: overlay;
   -ms-overflow-y: overlay;
   -o-overflow-y: overlay;
+  overflow: hidden;
 }
 
 .ninjaStar {
