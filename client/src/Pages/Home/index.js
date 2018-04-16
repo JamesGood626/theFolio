@@ -30,12 +30,20 @@ class Home extends Component {
 				mountComponent: !prevState.mountComponent
 			}))
 		}, 950)
+		document.addEventListener('wheel', this.preventDefaultScroll)
+		document.addEventListener('scroll', this.preventDefaultScroll)
 	}
 
 	componentWillUnmount() {
 		this.setState((prevState, state) => ({
 			mountComponent: !prevState.mountComponent
 		}))
+		document.removeEventListener('wheel', this.preventDefaultScroll)
+		document.removeEventListener('scroll', this.preventDefaultScroll)
+	}
+
+	preventDefaultScroll = event => {
+		event.preventDefault()
 	}
 
 	toggleLoader = () => {
