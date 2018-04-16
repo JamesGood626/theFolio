@@ -16,6 +16,10 @@ html, body {
 body {
   /* Adding overflow-y: overlay; ends the jumping navbar in resposne to scrollbar width on page transition */
   overflow-y: overlay;
+  -webkit-overflow-y: overlay;
+  -moz-overflow-y: overlay;
+  -ms-overflow-y: overlay;
+  -o-overflow-y: overlay;
 }
 
 .ninjaStar {
