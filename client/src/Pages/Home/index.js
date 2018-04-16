@@ -8,10 +8,8 @@ import Renderer from './Three/Renderer'
 
 
 const Div = styled.div`
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	background-color: blue;
+	height: 100vh;
+	width: 100vw;
 `
 
 class Home extends Component {
@@ -31,18 +29,20 @@ class Home extends Component {
 				mountComponent: !prevState.mountComponent
 			}))
 		}, 950)
-		//document.addEventListener('wheel', this.preventDefaultScroll)
+		document.addEventListener('wheel', this.preventDefaultScroll)
 		document.addEventListener('scroll', this.preventDefaultScroll)
 		document.addEventListener('touchmove', this.preventDefaultScroll)
+		document.addEventListener('touchstart', this.preventDefaultScroll)
 	}
 
 	componentWillUnmount() {
 		this.setState((prevState, state) => ({
 			mountComponent: !prevState.mountComponent
 		}))
-		//document.removeEventListener('wheel', this.preventDefaultScroll)
+		document.removeEventListener('wheel', this.preventDefaultScroll)
 		document.removeEventListener('scroll', this.preventDefaultScroll)
 		document.removeEventListener('touchmove', this.preventDefaultScroll)
+		document.removeEventListener('touchmstart', this.preventDefaultScroll)
 	}
 
 	preventDefaultScroll = event => {
