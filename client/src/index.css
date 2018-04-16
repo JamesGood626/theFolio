@@ -13,7 +13,7 @@ html, body {
 
 body {
   /* Adding overflow-y: overlay; ends the jumping navbar in resposne to scrollbar width on page transition */
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   /* overflow-y: overlay;
   -webkit-overflow-y: overlay;
