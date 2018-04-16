@@ -31,6 +31,7 @@ class Home extends Component {
 			}))
 		}, 950)
 		document.addEventListener('wheel', this.preventDefaultScroll)
+		// document.addEventListener('scroll', this.preventDefaultScroll)
 		document.addEventListener('touchmove', this.preventDefaultScroll)
 	}
 
@@ -39,6 +40,7 @@ class Home extends Component {
 			mountComponent: !prevState.mountComponent
 		}))
 		document.removeEventListener('wheel', this.preventDefaultScroll)
+		// document.removeEventListener('scroll', this.preventDefaultScroll)
 		document.removeEventListener('touchmove', this.preventDefaultScroll)
 	}
 
