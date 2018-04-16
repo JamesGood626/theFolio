@@ -10,7 +10,6 @@ import Renderer from './Three/Renderer'
 const Div = styled.div`
 	height: 100vh;
 	width: 100vw;
-	position: fixed;
 `
 
 class Home extends Component {
