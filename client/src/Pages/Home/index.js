@@ -31,12 +31,18 @@ class Home extends Component {
 				mountComponent: !prevState.mountComponent
 			}))
 		}, 950)
+		this.containerDiv.addEventListener('touchmove', this.preventScroll)
 	}
 
 	componentWillUnmount() {
 		this.setState((prevState, state) => ({
 			mountComponent: !prevState.mountComponent
 		}))
+		this.containerDiv.removeEventListener('touchmove', this.preventScroll)
+	}
+
+	preventScroll = event => {
+		event.preventDefault()
 	}
 
 	toggleLoader = () => {
@@ -51,7 +57,7 @@ class Home extends Component {
 	render () {
 		const { mountComponent, showLoader } = this.state
 		return (
-			<Div>
+			<Div ref={x => this.containerDiv = x}>
 				<Menu/>
 				<Header>Web Developer</Header>
 				 { (showLoader || !mountComponent) && <Loader/> }
