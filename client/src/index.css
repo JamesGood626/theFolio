@@ -3,23 +3,28 @@
 }
 
 html, body {
-  position: relative;
   font-family: 'Play', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #fbfcff;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
   /* Adding overflow-y: overlay; ends the jumping navbar in resposne to scrollbar width on page transition */
+  position: relative;
   height: 100vh;
   width: 100vw;
-   overflow-y: overlay;
+  overflow-y: overlay;
   -webkit-overflow-y: overlay;
   -moz-overflow-y: overlay;
   -ms-overflow-y: overlay;
   -o-overflow-y: overlay;
+  -webkit-overscroll-behavior: contain;
+  -moz-overscroll-behavior: contain;
+  -ms-overscroll-behavior: contain;
+  -o-overscroll-behavior: contain;
   /* overflow-y: scroll;
   -webkit-overflow-scrolling: touch; */
 }
