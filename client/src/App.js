@@ -14,10 +14,13 @@ import BlogPost from './Pages/Blog/BlogPost'
 
 import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
+
 const Section = styled.section`
   position: absolute;
   z-index: 1000;
   width: 100vw;
+  overflow: scroll;
+  overflow-scrolling: touch;
   // padding-bottom: 2rem;
 `
 
@@ -124,7 +127,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div className="mainContainerDiv" ref={x => this.containerDiv = x} style={ transitionOverlayActive ? preventScroll : null}>
+      <div style={ transitionOverlayActive ? preventScroll : null}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition

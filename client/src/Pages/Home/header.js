@@ -4,17 +4,16 @@ import styled from 'styled-components'
 
 const P = styled.p`
   position: absolute;
-  top: 85%;
+  top: 80%;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
   font-size: 1.4rem;
-  // color: #0c0c0c;
-  color: blue;
+  color: #0c0c0c;
 
   @media (min-width: 440px) {
     font-size: 2.6rem;
-    top: 80%;
+    top: 85%;
   }
 
   @media (min-width: 742px) {

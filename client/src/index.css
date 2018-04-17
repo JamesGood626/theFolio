@@ -28,11 +28,6 @@ body {
   -webkit-overflow-scrolling: touch; 
 }
 
- .mainContainerDiv {
-  -webkit-overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-} 
-
 .ninjaStar {
   position: absolute;
   top: 25%;
@@ -63,11 +58,14 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #35e0f0;
+
+  margin: 0;
+  overflow-y: hidden; 
   /*** 
   using overflow: hidden primarily for revealing modal nav text, but could help in more 
   complex page transition animations as well.
   ***/
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #blackOverlay {
