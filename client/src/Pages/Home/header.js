@@ -9,7 +9,8 @@ const P = styled.p`
   transform: translateX(-50%);
   margin: 0;
   font-size: 1.4rem;
-  color: #0c0c0c;
+  // color: #0c0c0c;
+  color: blue;
 
   @media (min-width: 440px) {
     font-size: 2.6rem;

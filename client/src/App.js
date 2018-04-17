@@ -14,10 +14,6 @@ import BlogPost from './Pages/Blog/BlogPost'
 
 import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
-const Div = styled.div`
-  overscroll-behavior: contain;
-`
-
 const Section = styled.section`
   position: absolute;
   z-index: 1000;
@@ -48,6 +44,10 @@ class App extends Component {
     if (this.props.location.pathname === '/') {
       this.toggleNav()
     }
+  }
+
+  componentWillUnmount() {
+    this.containerDiv.removeEventListener('touchmove', this.preventScroll)
   }
 
   toggleNav() {
@@ -124,7 +124,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <Div ref={x => this.containerDiv = x} style={ transitionOverlayActive ? preventScroll : null}>
+      <div className="mainContainerDiv" ref={x => this.containerDiv = x} style={ transitionOverlayActive ? preventScroll : null}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition
@@ -150,7 +150,7 @@ class App extends Component {
           </Transition>
         </TransitionGroup>
         { transitionOverlayActive ? <TransitionOverlay action={ this.props.history.action }/> : null}
-      </Div> 
+      </div> 
     )
   }
 }

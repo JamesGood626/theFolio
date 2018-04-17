@@ -10,6 +10,7 @@ const Div = styled.div`
   position: relative;
   left: 0;
   right: 0;
+  margin: 0;
   margin-left: auto;
   margin-right: auto;
   z-index: 100;

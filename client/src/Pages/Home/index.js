@@ -63,8 +63,7 @@ class Home extends Component {
 			'height': '100vh',
 			'width': '100vw',
 			'position': 'fixed',
-			'overscrollBehavior': 'contain',
-			'backgroundColor': 'blue'
+			'overscrollBehavior': 'contain'
 		}
 		return (
 			<div style={ containerDivStyle } ref={x => this.containerDiv = x}>

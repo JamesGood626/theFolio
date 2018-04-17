@@ -8,8 +8,6 @@ html, body {
   padding: 0;
   background-color: #fbfcff;
   overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -26,9 +24,14 @@ body {
   -moz-overscroll-behavior: contain;
   -ms-overscroll-behavior: contain;
   -o-overscroll-behavior: contain;
-  /* overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; */
+   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; 
 }
+
+ .mainContainerDiv {
+  -webkit-overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+} 
 
 .ninjaStar {
   position: absolute;
