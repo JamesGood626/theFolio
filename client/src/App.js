@@ -19,8 +19,9 @@ const Section = styled.section`
   position: absolute;
   z-index: 1000;
   width: 100vw;
-  // overflow-y: scroll;
-  // overflow-scrolling: touch;
+  z-index: 1500; 
+  overflow-y: scroll;
+  overflow-scrolling: touch;
   // padding-bottom: 2rem;
 `
 
@@ -47,10 +48,6 @@ class App extends Component {
     if (this.props.location.pathname === '/') {
       this.toggleNav()
     }
-  }
-
-  componentWillUnmount() {
-    this.containerDiv.removeEventListener('touchmove', this.preventScroll)
   }
 
   toggleNav() {
@@ -98,26 +95,12 @@ class App extends Component {
   // leaveTransition(node) {
   //   console.log('LEAVE TRANSITION RUNNING')
   // }
-
-  preventScroll = event => {
-    if(this.state.transitionOverlayActive) {
-      event.preventDefault()
-    }
-  }
-
   render() {
-    if(this.containerDiv) {
-			this.containerDiv.addEventListener('touchmove', this.preventScroll)
-		}
     const preventScroll = {
       'overflow': 'hidden',
       'position': 'absolute',
       'height': '100vh',
       'width': '100vw'
-    }
-    const scrollY = {
-      'overflowY': 'scroll',
-      'overflowScroll': 'touch'
     }
     // const bgColor = {
     //   'position': 'absolute',
@@ -131,7 +114,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div style={ transitionOverlayActive ? preventScroll : scrollY }>
+      <div style={ transitionOverlayActive ? preventScroll : null }>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition

@@ -26,7 +26,6 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		console.log(process.env)
 		// Necessary to ensure that the Three.js model doesn't mount during the start of the page transition
 		setTimeout(() => {
 			this.setState((prevState, state) => ({
