@@ -19,8 +19,8 @@ const Section = styled.section`
   position: absolute;
   z-index: 1000;
   width: 100vw;
-  overflow: scroll;
-  overflow-scrolling: touch;
+  // overflow-y: scroll;
+  // overflow-scrolling: touch;
   // padding-bottom: 2rem;
 `
 
@@ -115,6 +115,10 @@ class App extends Component {
       'height': '100vh',
       'width': '100vw'
     }
+    const scrollY = {
+      'overflowY': 'scroll',
+      'overflowScroll': 'touch'
+    }
     // const bgColor = {
     //   'position': 'absolute',
     //   'width': '100vw'
@@ -127,7 +131,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div style={ transitionOverlayActive ? preventScroll : null}>
+      <div style={ transitionOverlayActive ? preventScroll : scrollY }>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition

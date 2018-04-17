@@ -24,8 +24,6 @@ body {
   -moz-overscroll-behavior: contain;
   -ms-overscroll-behavior: contain;
   -o-overscroll-behavior: contain;
-   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; 
 }
 
 .ninjaStar {
@@ -59,6 +57,7 @@ body {
   width: 100vw;
   background-color: #35e0f0;
 
+  /* added these to test out the other method for preventing scroll */
   margin: 0;
   overflow-y: hidden; 
   /*** 
