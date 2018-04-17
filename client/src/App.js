@@ -15,7 +15,7 @@ import BlogPost from './Pages/Blog/BlogPost'
 import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
 const Div = styled.div`
-  -webkit-overscroll-behavior: contain;
+  overscroll-behavior: contain;
 `
 
 const Section = styled.section`
@@ -24,7 +24,6 @@ const Section = styled.section`
   width: 100vw;
   // padding-bottom: 2rem;
 `
-
 
 // this.props.history.action provides PUSH or POP on each page navigation
 class App extends Component {
@@ -97,10 +96,19 @@ class App extends Component {
   //   console.log('LEAVE TRANSITION RUNNING')
   // }
 
+  preventScroll = event => {
+    if(this.state.transitionOverlayActive) {
+      event.preventDefault()
+    }
+  }
+
   render() {
+    if(this.containerDiv) {
+			this.containerDiv.addEventListener('touchmove', this.preventScroll)
+		}
     const preventScroll = {
       'overflow': 'hidden',
-      'position': 'fixed',
+      'position': 'absolute',
       'height': '100vh',
       'width': '100vw'
     }
@@ -116,7 +124,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <Div style={ transitionOverlayActive ? preventScroll : null}>
+      <Div ref={x => this.containerDiv = x} style={ transitionOverlayActive ? preventScroll : null}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition
