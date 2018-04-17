@@ -48,6 +48,16 @@ class App extends Component {
     if (this.props.location.pathname === '/') {
       this.toggleNav()
     }
+    if(this.containerDiv) {
+      console.log("adding event")
+      this.containerDiv.addEventListener('wheel', this.preventScroll)
+      this.containerDiv.addEventListener('touchmove', this.preventScroll)
+    }
+  }
+  
+  componentWillUnmount() {
+    this.containerDiv.removeEventListener('wheel', this.preventScroll)
+    this.containerDiv.removeEventListener('touchmove', this.preventScroll)
   }
 
   toggleNav() {
@@ -92,6 +102,13 @@ class App extends Component {
     this.activateTransitionOverlay()
   }
 
+  preventScroll = event => {
+    if(this.state.transitionOverlayActive) {
+      console.log("preventing default")
+      event.preventDefault()
+    }
+	}
+
   // leaveTransition(node) {
   //   console.log('LEAVE TRANSITION RUNNING')
   // }
@@ -117,7 +134,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div style={ transitionOverlayActive ? preventScroll : overflowScrolling }>
+      <div style={ transitionOverlayActive ? preventScroll : overflowScrolling } ref={x => this.containerDiv = x}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition
@@ -131,7 +148,7 @@ class App extends Component {
             unmountOnExit={ true } 
             onEnter={ this.enterTransition }
           >
-            <Section style={ precursorTransitionOverlayActive ? displayNone : null }>
+            <Section style={ precursorTransitionOverlayActive ? displayNone : overflowScrolling }>
               <Switch location={ location }>
                 <Route exact path="/" component={ Home }/>
                 <Route exact path="/about" component={ About }/>

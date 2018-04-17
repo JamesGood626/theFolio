@@ -34,8 +34,8 @@ class Home extends Component {
 		}, 950)
 		if(this.containerDiv) {
 			console.log("event listener being added")
-			console.log(this.containerDiv)
-			this.containerDiv.addEventListener('touchmove', this.preventMobileScroll)
+			this.containerDiv.addEventListener('wheel', this.preventScroll)
+			this.containerDiv.addEventListener('touchmove', this.preventScroll)
 		}
 	}
 
@@ -43,7 +43,8 @@ class Home extends Component {
 		this.setState((prevState, state) => ({
 			mountComponent: !prevState.mountComponent
 		}))
-		this.containerDiv.removeEventListener('touchmove', this.preventMobileScroll)
+		this.containerDiv.removeEventListener('wheel', this.preventScroll)
+		this.containerDiv.removeEventListener('touchmove', this.preventScroll)
 	}
 
 	toggleLoader = () => {
@@ -55,7 +56,7 @@ class Home extends Component {
 		}
 	}
 
-	preventMobileScroll = event => {
+	preventScroll = event => {
 		event.preventDefault()
 	}
 
