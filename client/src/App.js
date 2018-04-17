@@ -19,9 +19,9 @@ const Section = styled.section`
   position: absolute;
   z-index: 1000;
   width: 100vw;
-  z-index: 1200;
-  overflow-y: scroll;
-  overflow-scrolling: touch;
+  // z-index: 1200;
+  // overflow-y: scroll;
+  // overflow-scrolling: touch;
   // padding-bottom: 2rem;
 `
 
