@@ -7,13 +7,13 @@ import Loader from '../../UtilComponents/Loader'
 import Renderer from './Three/Renderer'
 
 
-const Div = styled.div`
-	height: 100vh;
-	width: 100vw;
-	position: fixed;
-	overscroll-behavior: contain;
-	touch-action: none;
-`
+// const Div = styled.div`
+// 	height: 100vh;
+// 	width: 100vw;
+// 	position: fixed;
+// 	overscroll-behavior: contain;
+// 	touch-action: none;
+// `
 
 class Home extends Component {
 	constructor(props) {
@@ -32,12 +32,18 @@ class Home extends Component {
 				mountComponent: !prevState.mountComponent
 			}))
 		}, 950)
+		if(this.containerDiv) {
+			console.log("event listener being added")
+			console.log(this.containerDiv)
+			this.containerDiv.addEventListener('touchmove', this.preventMobileScroll)
+		}
 	}
 
 	componentWillUnmount() {
 		this.setState((prevState, state) => ({
 			mountComponent: !prevState.mountComponent
 		}))
+		this.containerDiv.removeEventListener('touchmove', this.preventMobileScroll)
 	}
 
 	toggleLoader = () => {
@@ -49,19 +55,19 @@ class Home extends Component {
 		}
 	}
 
-	preventScroll = event => {
+	preventMobileScroll = event => {
 		event.preventDefault()
 	}
 
 	render () {
 		const { mountComponent, showLoader } = this.state
 		return (
-			<Div>
+			<div className="homeContainerDiv" ref={x => this.containerDiv = x}>
 				<Menu/>
 				<Header>Web Developer</Header>
 				 { (showLoader || !mountComponent) && <Loader/> }
 				{ mountComponent && <Renderer toggleLoader={ this.toggleLoader }/> }
-			</Div>
+			</div>
 		)
 	}
 }
