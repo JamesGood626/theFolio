@@ -7,12 +7,12 @@ import Loader from '../../UtilComponents/Loader'
 import Renderer from './Three/Renderer'
 
 
-const Div = styled.div`
-	height: 100vh;
-	width: 100vw;
-	position: fixed;
-	overscroll-behavior: contain;
-`
+// const Div = styled.div`
+// 	height: 100vh;
+// 	width: 100vw;
+// 	position: fixed;
+// 	overscroll-behavior: contain;
+// `
 
 class Home extends Component {
 	constructor(props) {
@@ -25,13 +25,13 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
+		console.log(process.env)
 		// Necessary to ensure that the Three.js model doesn't mount during the start of the page transition
 		setTimeout(() => {
 			this.setState((prevState, state) => ({
 				mountComponent: !prevState.mountComponent
 			}))
 		}, 950)
-		this.containerDiv.addEventListener('touchmove', this.preventScroll)
 	}
 
 	componentWillUnmount() {
@@ -56,13 +56,22 @@ class Home extends Component {
 
 	render () {
 		const { mountComponent, showLoader } = this.state
+		if(this.containerDiv) {
+			this.containerDiv.addEventListener('touchmove', this.preventScroll)
+		}
+		const containerDivStyle = {
+			'height': '100vh',
+			'width': '100vw',
+			'position': 'fixed',
+			'overscrollBehavior': 'contain'
+		}
 		return (
-			<Div ref={x => this.containerDiv = x}>
+			<div style={ containerDivStyle } ref={x => this.containerDiv = x}>
 				<Menu/>
 				<Header>Web Developer</Header>
 				 { (showLoader || !mountComponent) && <Loader/> }
 				{ mountComponent && <Renderer toggleLoader={ this.toggleLoader }/> }
-			</Div>
+			</div>
 		)
 	}
 }
