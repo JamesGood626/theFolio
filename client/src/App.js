@@ -14,6 +14,9 @@ import BlogPost from './Pages/Blog/BlogPost'
 
 import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
+const Div = styled.div`
+  -webkit-overscroll-behavior: contain;
+`
 
 const Section = styled.section`
   position: absolute;
@@ -97,7 +100,7 @@ class App extends Component {
   render() {
     const preventScroll = {
       'overflow': 'hidden',
-      'position': 'absolute',
+      'position': 'fixed',
       'height': '100vh',
       'width': '100vw'
     }
@@ -113,7 +116,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div style={ transitionOverlayActive ? preventScroll : null}>
+      <Div style={ transitionOverlayActive ? preventScroll : null}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition
@@ -139,7 +142,7 @@ class App extends Component {
           </Transition>
         </TransitionGroup>
         { transitionOverlayActive ? <TransitionOverlay action={ this.props.history.action }/> : null}
-      </div> 
+      </Div> 
     )
   }
 }

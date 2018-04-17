@@ -13,6 +13,7 @@ const P = styled.p`
 
   @media (min-width: 440px) {
     font-size: 2.6rem;
+    top: 80%;
   }
 
   @media (min-width: 742px) {
