@@ -1,14 +1,14 @@
 import axios from 'axios'
 import { SEND_EMAIL } from './types'
 import { FETCH_POSTS } from './types'
-import SPACE_ID from './config'
-import ACCESS_TOKEN from './config'
+// import SPACE_ID from './config'
+// import ACCESS_TOKEN from './config'
 // check your email to resolving heroku config vars on client
 
 const BASE_URL = 'https://cdn.contentful.com/'
 
 
-export const sendEmail = (values) => async dispatch => {
+export const sendEmail = values => async dispatch => {
   const req = await axios.post('/contact/send', values)
 
   dispatch({ type: SEND_EMAIL, payload: req })
@@ -16,7 +16,7 @@ export const sendEmail = (values) => async dispatch => {
 
 
 export const fetchPosts = (key = null) => async dispatch => {
-	const posts = await axios.get(`${BASE_URL}spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}`)
+	const posts = await axios.get(`${BASE_URL}spaces/${process.env.REACT_APP_SPACE_ID}/entries?access_token=${process.env.REACT_APP_ACCESS_TOKEN}`)
   let refinedPosts = posts.data.items.reduce((obj, post) => {
 											let postObj = {}
 											let postId = post.fields.postTitle.replace(/\s/g, "-").toLowerCase()

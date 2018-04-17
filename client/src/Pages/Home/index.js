@@ -11,6 +11,7 @@ const Div = styled.div`
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
+	overscroll-behavior: contain;
 `
 
 class Home extends Component {
@@ -30,26 +31,12 @@ class Home extends Component {
 				mountComponent: !prevState.mountComponent
 			}))
 		}, 950)
-		document.addEventListener('wheel', this.preventDefaultScroll)
-		document.addEventListener('scroll', this.preventDefaultScroll)
-		document.addEventListener('touchmove', this.preventDefaultScroll)
-		document.addEventListener('touchstart', this.preventDefaultScroll)
 	}
 
 	componentWillUnmount() {
 		this.setState((prevState, state) => ({
 			mountComponent: !prevState.mountComponent
 		}))
-		document.removeEventListener('wheel', this.preventDefaultScroll)
-		document.removeEventListener('scroll', this.preventDefaultScroll)
-		document.removeEventListener('touchmove', this.preventDefaultScroll)
-		document.removeEventListener('touchmstart', this.preventDefaultScroll)
-	}
-
-	preventDefaultScroll = event => {
-		console.log("event firing")
-		event.preventDefault()
-		event.stopPropagation()
 	}
 
 	toggleLoader = () => {
