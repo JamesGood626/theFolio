@@ -12,6 +12,7 @@ const Div = styled.div`
 	width: 100vw;
 	position: fixed;
 	overscroll-behavior: contain;
+	touch-action: none;
 `
 
 class Home extends Component {
@@ -47,6 +48,10 @@ class Home extends Component {
 				showLoader: !prevState.showLoader
 			}))
 		}
+	}
+
+	preventScroll = event => {
+		event.preventDefault()
 	}
 
 	render () {
