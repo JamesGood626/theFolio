@@ -13,6 +13,7 @@ const Div = styled.div`
   top: 10vh;
   height: 28rem;
   width: 100vw;
+  max-width: 100%;
 
   @media (min-width: 742px) {
     top: 20vh;

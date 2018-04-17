@@ -106,6 +106,9 @@ class App extends Component {
     //   'position': 'absolute',
     //   'width': '100vw'
     // }
+    const overflowScrolling = {
+      'WebkitOverflowScrolling': 'touch'
+    }
     const displayNone = {
       // This display none is crucial for preventing premature visibility of mounting component.
       'display': 'none'
@@ -114,7 +117,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div style={ transitionOverlayActive ? preventScroll : null }>
+      <div style={ transitionOverlayActive ? preventScroll : overflowScrolling }>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition
