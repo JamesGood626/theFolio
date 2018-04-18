@@ -15,12 +15,17 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-y: scroll;
+  -moz-overflow-y: scroll;
+  -ms-overflow-y: scroll;
+  -o-overflow-y: scroll;
+  /* overflow: auto;
   -webkit-overflow: auto;
   -moz-overflow: auto;
   -ms-overflow: auto;
   -o-overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; */
 }
 
 .homeContainerDiv {

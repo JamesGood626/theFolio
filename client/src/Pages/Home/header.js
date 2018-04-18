@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const P = styled.p`
   position: absolute;
-  top: 80%;
+  top: 82%;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;

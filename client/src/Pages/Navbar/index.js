@@ -38,7 +38,7 @@ const Ul = styled.ul`
 
 const Li = styled.li`
   // color: #828489;
-  color: orange;
+  color: limegreen;
 
   &:hover {
     color: #d0ccd0;
