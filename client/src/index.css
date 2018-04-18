@@ -15,25 +15,17 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  overflow-y: overlay;
-  -webkit-overflow-y: overlay;
-  -moz-overflow-y: overlay;
-  -ms-overflow-y: overlay;
-  -o-overflow-y: overlay;
-  -webkit-overscroll-behavior: contain;
-  -moz-overscroll-behavior: contain;
-  -ms-overscroll-behavior: contain;
-  -o-overscroll-behavior: contain;
+  overflow: auto;
+  -webkit-overflow: auto;
+  -moz-overflow: auto;
+  -ms-overflow: auto;
+  -o-overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .homeContainerDiv {
   height: 100vh;
 	width: 100vw;
-	position: fixed;
-  -webkit-overscroll-behavior: contain;
-  -moz-overscroll-behavior: contain;
-  -ms-overscroll-behavior: contain;
-  -o-overscroll-behavior: contain;
 }
 
 .ninjaStar {

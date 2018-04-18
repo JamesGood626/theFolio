@@ -117,15 +117,15 @@ class App extends Component {
     //   'position': 'absolute',
     //   'width': '100vw'
     // }
-    const overflowScrolling = {
-      'position': 'absolute',
-      'top': '0',
-      'bottom': '0',
-      'left': '0',
-      'right': '0',
-      'margin': 'auto',
-      'WebkitOverflowScrolling': 'touch'
-    }
+    // const overflowScrolling = {
+    //   'position': 'absolute',
+    //   'top': '0',
+    //   'bottom': '0',
+    //   'left': '0',
+    //   'right': '0',
+    //   'margin': 'auto',
+    //   'WebkitOverflowScrolling': 'touch'
+    // }
     const displayNone = {
       // This display none is crucial for preventing premature visibility of mounting component.
       'display': 'none'
@@ -134,7 +134,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div style={ transitionOverlayActive ? preventScroll : overflowScrolling } ref={x => this.containerDiv = x}>
+      <div style={ transitionOverlayActive ? preventScroll : null } ref={x => this.containerDiv = x}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition
@@ -148,7 +148,7 @@ class App extends Component {
             unmountOnExit={ true } 
             onEnter={ this.enterTransition }
           >
-            <Section style={ precursorTransitionOverlayActive ? displayNone : overflowScrolling }>
+            <Section style={ precursorTransitionOverlayActive ? displayNone : null }>
               <Switch location={ location }>
                 <Route exact path="/" component={ Home }/>
                 <Route exact path="/about" component={ About }/>
