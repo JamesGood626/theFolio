@@ -118,6 +118,7 @@ class App extends Component {
     //   'width': '100vw'
     // }
     const overflowScrolling = {
+      'overflow': 'auto',
       'WebkitOverflowScrolling': 'touch'
     }
     const displayNone = {
@@ -142,7 +143,7 @@ class App extends Component {
             unmountOnExit={ true } 
             onEnter={ this.enterTransition }
           >
-            <Section style={ precursorTransitionOverlayActive ? displayNone : overflowScrolling }>
+            <Section style={ precursorTransitionOverlayActive ? displayNone : null }>
               <Switch location={ location }>
                 <Route exact path="/" component={ Home }/>
                 <Route exact path="/about" component={ About }/>
