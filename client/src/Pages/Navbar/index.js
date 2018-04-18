@@ -37,7 +37,8 @@ const Ul = styled.ul`
 `
 
 const Li = styled.li`
-  color: #828489;
+  // color: #828489;
+  color: blue;
 
   &:hover {
     color: #d0ccd0;

@@ -148,7 +148,7 @@ class App extends Component {
             unmountOnExit={ true } 
             onEnter={ this.enterTransition }
           >
-            <Section style={ precursorTransitionOverlayActive ? displayNone : null }>
+            <Section style={ precursorTransitionOverlayActive ? displayNone : overflowScrolling }>
               <Switch location={ location }>
                 <Route exact path="/" component={ Home }/>
                 <Route exact path="/about" component={ About }/>

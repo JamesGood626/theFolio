@@ -7,14 +7,6 @@ import Loader from '../../UtilComponents/Loader'
 import Renderer from './Three/Renderer'
 
 
-// const Div = styled.div`
-// 	height: 100vh;
-// 	width: 100vw;
-// 	position: fixed;
-// 	overscroll-behavior: contain;
-// 	touch-action: none;
-// `
-
 class Home extends Component {
 	constructor(props) {
 		super(props)
