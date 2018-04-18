@@ -118,6 +118,8 @@ class App extends Component {
     //   'width': '100vw'
     // }
     const overflowScrolling = {
+      'height': '100vh',
+      'width': '100vw',
       'overflow': 'auto',
       'WebkitOverflowScrolling': 'touch'
     }

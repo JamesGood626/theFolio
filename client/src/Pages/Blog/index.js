@@ -15,6 +15,8 @@ const Section = styled.section`
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 2.4rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 
   @media (min-width: 700px) {
     width: 80%;
