@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Form from './Form'
 
 const Div = styled.div`
-  overflow: visible;
+  padding-bottom: 2.4rem;
 `
 
 class Contact extends Component {

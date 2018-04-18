@@ -7,6 +7,9 @@ import moto472 from './moto-472.png'
 import moto665 from './moto-665.png'
 import moto828 from './moto-828.png'
 
+const Div = styled.div`
+  padding-bottom: 2.4rem;
+`
 
 const P = styled.p`
   color: #274156;
@@ -33,7 +36,7 @@ class About extends Component {
   render() {
     const images = {'three': moto350,'four': moto472, 'six': moto665, 'eight': moto828}
     return (
-      <div>
+      <Div>
         <Image image={ images }>
             <P>
               From and currently live in Phoenix, Arizona. Code, piano, and motorcycles. That's a high level introduction
@@ -45,7 +48,7 @@ class About extends Component {
               Here is my <A href="https://github.com/JamesGood626">github</A> if you'd like to see some of my code.
             </P>
         </Image>
-      </div>
+      </Div>
     )
   }
 }

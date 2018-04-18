@@ -14,6 +14,7 @@ const Section = styled.section`
   height: 100%;
   margin: 0 auto;
   margin-top: 1rem;
+  padding-bottom: 2.4rem;
 
   @media (min-width: 700px) {
     width: 80%;
@@ -73,7 +74,6 @@ class Blog extends Component {
     }
     let postsArr = Object.entries(this.props.posts)
     return (
-      <div>
         <Section>
           { postsArr ? 
               postsArr.map((post, index) => {
@@ -89,7 +89,6 @@ class Blog extends Component {
             : null 
           } 
         </Section>
-      </div>
     )
   }
 }

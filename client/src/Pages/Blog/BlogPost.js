@@ -7,6 +7,12 @@ import { irBlack } from 'react-syntax-highlighter/dist/styles'
 import styled from 'styled-components'
 
 
+const ContainerDiv = styled.div`
+  height: 100%;
+  width: 100%;
+  padding-bottom: 2.4rem;
+`
+
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -64,7 +70,7 @@ class BlogPost extends Component {
       theme: irBlack
     }
     return (
-        <div>
+        <ContainerDiv>
             { this.state.post ?
                 <Div>
                   <H1>{ this.state.post.postStore.postTitle }</H1>
@@ -72,7 +78,7 @@ class BlogPost extends Component {
                 </Div>
               : null 
             }
-        </div>
+        </ContainerDiv>
     )
   }
 }

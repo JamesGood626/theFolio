@@ -57,7 +57,7 @@ class Home extends Component {
 			<div className="homeContainerDiv" ref={x => this.containerDiv = x}>
 				<Menu/>
 				<Header>Web Developer</Header>
-				 { (showLoader || !mountComponent) && <Loader/> }
+				{ (showLoader || !mountComponent) && <Loader/> }
 				{ mountComponent && <Renderer toggleLoader={ this.toggleLoader }/> }
 			</div>
 		)
