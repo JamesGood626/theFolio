@@ -17,6 +17,7 @@ const Div = styled.div`
   height: 7rem;
   padding: 0 1rem;
   width: 90%;
+  overflow: hidden;
 `
 
 const Ul = styled.ul`
@@ -37,8 +38,7 @@ const Ul = styled.ul`
 `
 
 const Li = styled.li`
-  // color: #828489;
-  color: #dd7068;
+  color: #828489;
 
   &:hover {
     color: #d0ccd0;
