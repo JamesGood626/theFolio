@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import Form from './Form'
 
 const Div = styled.div`
-  padding-bottom: 2.4rem;
+  height: 100vh;
+  margin-bottom: 2.4rem;
 `
 
 class Contact extends Component {

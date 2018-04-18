@@ -8,7 +8,8 @@ import moto665 from './moto-665.png'
 import moto828 from './moto-828.png'
 
 const Div = styled.div`
-  padding-bottom: 2.4rem;
+  height: 100vh;
+  margin-bottom: 2.4rem;
 `
 
 const P = styled.p`

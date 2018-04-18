@@ -8,9 +8,8 @@ import styled from 'styled-components'
 
 
 const ContainerDiv = styled.div`
-  height: 100%;
-  width: 100%;
-  padding-bottom: 2.4rem;
+  height: 100vh;
+  margin-bottom: 2.4rem;
 `
 
 const Div = styled.div`

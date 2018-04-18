@@ -17,7 +17,7 @@ const Div = styled.div`
   height: 7rem;
   padding: 0 1rem;
   width: 90%;
-  overflow: hidden;
+  overflow: visible;
 `
 
 const Ul = styled.ul`

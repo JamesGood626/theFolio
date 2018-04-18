@@ -48,6 +48,7 @@ class Home extends Component {
 	}
 
 	preventScroll = event => {
+		console.log("Preventing default")
 		event.preventDefault()
 	}
 

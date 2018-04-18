@@ -10,11 +10,11 @@ const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 100vh;
   width: 90%;
-  height: 100%;
   margin: 0 auto;
   margin-top: 1rem;
-  padding-bottom: 2.4rem;
+  margin-bottom: 2.4rem;
 
   @media (min-width: 700px) {
     width: 80%;
