@@ -17,7 +17,7 @@ import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
 const Section = styled.section`
   position: absolute;
-  z-index: 1000;
+  // z-index: 1000;
   width: 100vw;
 `
 
@@ -46,13 +46,13 @@ class App extends Component {
     }
     if(this.containerDiv) {
       this.containerDiv.addEventListener('wheel', this.preventScroll)
-      this.containerDiv.addEventListener('touchmove', this.preventScroll)
+      this.containerDiv.addEventListener('touchstart', this.preventScroll)
     }
   }
   
   componentWillUnmount() {
     this.containerDiv.removeEventListener('wheel', this.preventScroll)
-    this.containerDiv.removeEventListener('touchmove', this.preventScroll)
+    this.containerDiv.removeEventListener('touchstart', this.preventScroll)
   }
 
   toggleNav() {

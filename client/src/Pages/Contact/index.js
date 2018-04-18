@@ -5,8 +5,6 @@ import Form from './Form'
 const Div = styled.div`
   height: 100vh;
   margin-bottom: 2.4rem;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
 `
 
 class Contact extends Component {
