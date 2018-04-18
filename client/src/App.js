@@ -19,10 +19,6 @@ const Section = styled.section`
   position: absolute;
   z-index: 1000;
   width: 100vw;
-  // z-index: 1200;
-  // overflow-y: scroll;
-  // overflow-scrolling: touch;
-  // padding-bottom: 2rem;
 `
 
 // this.props.history.action provides PUSH or POP on each page navigation
@@ -49,7 +45,6 @@ class App extends Component {
       this.toggleNav()
     }
     if(this.containerDiv) {
-      console.log("adding event")
       this.containerDiv.addEventListener('wheel', this.preventScroll)
       this.containerDiv.addEventListener('touchmove', this.preventScroll)
     }
@@ -104,7 +99,6 @@ class App extends Component {
 
   preventScroll = event => {
     if(this.state.transitionOverlayActive) {
-      console.log("preventing default")
       event.preventDefault()
     }
 	}
@@ -124,6 +118,12 @@ class App extends Component {
     //   'width': '100vw'
     // }
     const overflowScrolling = {
+      'position': 'absolute',
+      'top': '0',
+      'bottom': '0',
+      'left': '0',
+      'right': '0',
+      'margin': 'auto',
       'WebkitOverflowScrolling': 'touch'
     }
     const displayNone = {
@@ -148,7 +148,7 @@ class App extends Component {
             unmountOnExit={ true } 
             onEnter={ this.enterTransition }
           >
-            <Section style={ precursorTransitionOverlayActive ? displayNone : overflowScrolling }>
+            <Section style={ precursorTransitionOverlayActive ? displayNone : null }>
               <Switch location={ location }>
                 <Route exact path="/" component={ Home }/>
                 <Route exact path="/about" component={ About }/>
