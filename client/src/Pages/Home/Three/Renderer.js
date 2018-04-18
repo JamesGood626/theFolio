@@ -186,13 +186,13 @@ class Renderer extends Component {
 
 
   render() {
-    const containerStyle = {
-      'height': '100%',
-      'width': '100%',
-      'position': 'fixed'
+    const containerDivStyle = {
+      'height': '100vh',
+      'width': '100vw',
+      'zIndex': '1'
     }
     return (
-      <div style={ containerStyle } ref={el => this.container = el}>
+      <div style={ containerDivStyle } ref={el => this.container = el}>
         <Camera passUpProps={ this.getCamera }/>
         <Scene passUpProps={ this.getScene }>
           { scene => {
