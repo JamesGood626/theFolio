@@ -4,7 +4,9 @@ import Form from './Form'
 
 const Div = styled.div`
   height: 100vh;
+  width: 100vw;
   margin-bottom: 2.4rem;
+  background-color: orange;
 `
 
 class Contact extends Component {
