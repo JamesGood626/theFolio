@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+import Navbar from '../Pages/Navbar'
+
 const ContainerDiv = styled.div`
   height: 100vh;
+  width: 100vw;
+`
+
+const Section = styled.section`
+  position: absolute;
+  z-index: 1000;
+  height: 100%;
   width: 100vw;
 `
 
@@ -17,8 +26,11 @@ const P = styled.p`
 
 class TestScroll extends Component {
   render() {
+    const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
       <ContainerDiv>
+        <Navbar location="/" menuItems={ navItems }/>
+        <Section>
         <Div style={{'backgroundColor': 'blue'}}>
           <P>
             Lorem ipsum dolor sit amet, ei pri solet quodsi alterum, volumus molestie pro at, inimicus euripidis eu ius. Vim doming civibus indoctum ex, ne purto fabulas scribentur vis. Rebum luptatum ne est, solet ubique maiorum te his, cu graeci omnesque expetendis nec. Nec postulant facilisis at.
@@ -97,6 +109,7 @@ Eum altera gloriatur ei, ad quas ancillae reprimique has, per an audire tritani 
 Id mei cibo regione legendos, idque nihil nec ut, in mutat dignissim mel. At dicunt prompta deserunt vim, per altera essent te. Pericula complectitur sea id, dicam similique intellegat ea vel. Eros menandri eleifend id per. Graecis civibus nam ut, sed id natum platonem.
           </P>
         </Div>
+        </Section>
       </ContainerDiv>
     )
   }
