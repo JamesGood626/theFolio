@@ -10,7 +10,8 @@ const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  overflow: auto;
+  // overflow: auto;
+  height: 100vh;
   width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
