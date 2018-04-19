@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux'
 import reduxThunk from 'redux-thunk'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
+import TestScroll from './UtilComponents/testScroll'
 import App from './App'
 import 'normalize.css'
 import './index.css'
@@ -18,6 +19,7 @@ ReactDOM.render(
   <Provider store={ store }>
     <BrowserRouter>
       <Switch>
+        <Route path="/test-scroll" component={ TestScroll }/>
         <Route path="/*" component={ App }/>
       </Switch>
     </BrowserRouter>
