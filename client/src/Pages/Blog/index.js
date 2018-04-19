@@ -11,7 +11,7 @@ const Section = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   // overflow: auto;
-  height: 100vh;
+  height: 100rem;
   width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
