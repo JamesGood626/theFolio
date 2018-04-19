@@ -8,7 +8,7 @@ import moto665 from './moto-665.png'
 import moto828 from './moto-828.png'
 
 const Div = styled.div`
-  height: 100vh;
+  overflow: auto;
   width: 100vw;
   background-color: blue;
   margin-bottom: 2.4rem;
