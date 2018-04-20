@@ -17,6 +17,7 @@ import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
 const Section = styled.section`
   position: relative;
+  background-color: orange;
   z-index: 1000;
   height: 100%;
   width: 100vw;
@@ -121,7 +122,8 @@ class App extends Component {
     const containerDivStyle = {
       'height': '100%',
       'width': '100vw',
-      'WebkitOverflowScrolling': 'touch'
+      'WebkitOverflowScrolling': 'touch',
+      'backgroundColor': 'limegreen'
     }
     // const overflowScrolling = {
     //   'WebkitOverflowScrolling': 'touch'
