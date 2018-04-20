@@ -120,7 +120,8 @@ class App extends Component {
     }
     const containerDivStyle = {
       'height': '100%',
-      'width': '100vw'
+      'width': '100vw',
+      'WebkitOverflowScrolling': 'touch'
     }
     // const overflowScrolling = {
     //   'WebkitOverflowScrolling': 'touch'
