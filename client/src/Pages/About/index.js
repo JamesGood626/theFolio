@@ -12,7 +12,6 @@ const Div = styled.div`
   width: 100vw;
   background-color: blue;
   margin-bottom: 2.4rem;
-  -webkit-overflow-scrolling: touch;
 `
 
 const P = styled.p`
