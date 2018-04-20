@@ -10,8 +10,8 @@ import styled from 'styled-components'
 const ContainerDiv = styled.div`
   height: 100%;
   width: 100vw;
-  background-color: yellow;
   margin-bottom: 2.4rem;
+  -webkit-overflow-scrolling: touch;
 `
 
 const Div = styled.div`

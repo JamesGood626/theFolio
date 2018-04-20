@@ -10,7 +10,7 @@ const Div = styled.div`
   height: 100%;
   width: 100vw;
   margin-bottom: 2.4rem;
-  background-color: blue;
+  -webkit-overflow-scrolling: touch;
 `
 
 class Contact extends Component {
