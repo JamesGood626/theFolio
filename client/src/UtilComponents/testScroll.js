@@ -7,7 +7,7 @@ const ContainerDiv = styled.div`
   height: 100%;
   width: 100vw;
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;3
 `
 
 const Section = styled.section`
@@ -33,7 +33,7 @@ class TestScroll extends Component {
       <ContainerDiv>
         <Navbar location="/" menuItems={ navItems }/>
         <Section>
-        <Div style={{'backgroundColor': 'blue'}}>
+        <Div style={{'backgroundColor': 'limegreen'}}>
           <P>
             Lorem ipsum dolor sit amet, ei pri solet quodsi alterum, volumus molestie pro at, inimicus euripidis eu ius. Vim doming civibus indoctum ex, ne purto fabulas scribentur vis. Rebum luptatum ne est, solet ubique maiorum te his, cu graeci omnesque expetendis nec. Nec postulant facilisis at.
 
