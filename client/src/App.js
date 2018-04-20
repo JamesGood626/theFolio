@@ -16,8 +16,7 @@ import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
 
 const Section = styled.section`
-  position: absolute;
-  // position: relative;
+  position: relative;
   z-index: 1000;
   height: 100%;
   width: 100vw;
