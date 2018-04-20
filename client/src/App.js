@@ -20,6 +20,7 @@ const Section = styled.section`
   z-index: 1000;
   height: 100%;
   width: 100vw;
+  -webkit-overflow-scrolling: touch;
 `
 
 // this.props.history.action provides PUSH or POP on each page navigation

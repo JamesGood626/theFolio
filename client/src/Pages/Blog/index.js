@@ -15,7 +15,6 @@ const Section = styled.section`
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 2.4rem;
-  background-color: limegreen;
 
   @media (min-width: 700px) {
     width: 80%;
