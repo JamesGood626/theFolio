@@ -10,14 +10,14 @@ const Div = styled.div`
   height: 100%;
   width: 100vw;
   margin-bottom: 2.4rem;
-  background-color: #62bbc1;
+  background-color: blue;
 `
 
 class Contact extends Component {
   render() {
     return (
       <Div>
-          <Form/>
+        <Form/>
       </Div>
     )
   }
