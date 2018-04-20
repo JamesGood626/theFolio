@@ -21,6 +21,7 @@ const Section = styled.section`
   z-index: 1000;
   height: 100%;
   width: 100vw;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 `
 
