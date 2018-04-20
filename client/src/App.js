@@ -21,8 +21,6 @@ const Section = styled.section`
   z-index: 1000;
   height: 100%;
   width: 100vw;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
 `
 
 // this.props.history.action provides PUSH or POP on each page navigation
@@ -122,9 +120,7 @@ class App extends Component {
     }
     const containerDivStyle = {
       'height': '100%',
-      'width': '100vw',
-      'WebkitOverflowScrolling': 'touch',
-      'backgroundColor': 'limegreen'
+      'width': '100vw'
     }
     // const overflowScrolling = {
     //   'WebkitOverflowScrolling': 'touch'

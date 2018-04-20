@@ -17,7 +17,6 @@ const Div = styled.div`
   height: 7rem;
   padding: 0 1rem;
   width: 90%;
-  -webkit-overflow-scrolling: touch;
 `
 
 const Ul = styled.ul`
