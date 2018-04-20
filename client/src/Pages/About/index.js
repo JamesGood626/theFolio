@@ -11,8 +11,10 @@ const Div = styled.div`
   height: 100%;
   width: 100vw;
   margin-bottom: 2.4rem;
+  // adding this overflow auto in an attempt to fix the small scroll quirk is my last attempt of the night
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: blue;
+  background-color: limegreen;
 `
 
 const P = styled.p`

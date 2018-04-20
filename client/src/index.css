@@ -4,7 +4,7 @@
 
 html, body {
   font-family: 'Play', sans-serif;
-  /* position: absolute; */
+  position: absolute;
   height: 100%;
   width: 100%;
   margin: 0;
