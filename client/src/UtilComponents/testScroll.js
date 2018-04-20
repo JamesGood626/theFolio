@@ -11,7 +11,10 @@ const ContainerDiv = styled.div`
 `
 
 const Section = styled.section`
-  // Was removing position absolute and zindex the key to acheiving smooth scroll?
+  // position absolute was causing the problem
+  // position absolute removed from appjs Section destroys the design
+  // Attempting with relative position
+  position: relative;
   z-index: 1000;
   height: 100%;
   width: 100vw;
@@ -33,7 +36,7 @@ class TestScroll extends Component {
       <ContainerDiv>
         <Navbar location="/" menuItems={ navItems }/>
         <Section>
-        <Div style={{'backgroundColor': 'blue'}}>
+        <Div style={{'backgroundColor': 'pink'}}>
           <P>
             Lorem ipsum dolor sit amet, ei pri solet quodsi alterum, volumus molestie pro at, inimicus euripidis eu ius. Vim doming civibus indoctum ex, ne purto fabulas scribentur vis. Rebum luptatum ne est, solet ubique maiorum te his, cu graeci omnesque expetendis nec. Nec postulant facilisis at.
 
