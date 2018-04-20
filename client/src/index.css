@@ -11,9 +11,11 @@ html, body {
   padding: 0;
   background-color: #fbfcff;
   overflow-x: hidden;
+  background-color: black;
 }
 
 body {
+  background-color: blue;
   -webkit-overflow-scrolling: touch;
 }
 
