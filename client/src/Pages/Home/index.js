@@ -28,6 +28,7 @@ class Home extends Component {
 			this.containerDiv.addEventListener('wheel', this.preventScroll)
 			this.containerDiv.addEventListener('touchmove', this.preventScroll)
 		}
+		document.body.style.overflowY = 'hidden'
 	}
 
 	componentWillUnmount() {

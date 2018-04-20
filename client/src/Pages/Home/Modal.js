@@ -58,9 +58,6 @@ class Modal extends Component {
           <Link style={ navItemPositioning } to='/contact'>
             <Span>Contact</Span>
           </Link>
-          <Link style={ navItemPositioning } to='/test-scroll'>
-            <Span>TestScroll</Span>
-          </Link>
         </Div>
       </div>
     )

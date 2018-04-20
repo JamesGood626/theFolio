@@ -94,6 +94,9 @@ class App extends Component {
     }
     if (this.props.location.pathname !== '/' && !this.state.navVisible) {
       setTimeout(this.toggleNav, 1000)
+      if (document.body.style.overflowY != 'scroll') {
+        document.body.style.overflowY = 'scroll'
+      }
     }
     this.activateTransitionOverlay()
   }
@@ -114,10 +117,10 @@ class App extends Component {
       'height': '100vh',
       'width': '100vw'
     }
-    const containerDivStyle = {
-      'height': '100%',
-      'width': '100vw'
-    }
+    // const containerDivStyle = {
+    //   'height': '100%',
+    //   'width': '100vw'
+    // }
     // const overflowScrolling = {
     //   'WebkitOverflowScrolling': 'touch'
     // }
@@ -129,7 +132,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div style={ transitionOverlayActive ? preventScroll : containerDivStyle } ref={x => this.containerDiv = x}>
+      <div style={ transitionOverlayActive ? preventScroll : null } ref={x => this.containerDiv = x}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition
