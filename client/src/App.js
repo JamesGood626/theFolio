@@ -17,6 +17,7 @@ import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
 const Section = styled.section`
   position: absolute;
+  // position: relative;
   z-index: 1000;
   height: 100%;
   width: 100vw;
@@ -117,10 +118,10 @@ class App extends Component {
       'height': '100vh',
       'width': '100vw'
     }
-    // const containerDivStyle = {
-    //   'height': '100%',
-    //   'width': '100vw'
-    // }
+    const containerDivStyle = {
+      'height': '100%',
+      'width': '100vw'
+    }
     // const overflowScrolling = {
     //   'WebkitOverflowScrolling': 'touch'
     // }
@@ -132,7 +133,7 @@ class App extends Component {
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
     const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
     return (
-      <div style={ transitionOverlayActive ? preventScroll : null } ref={x => this.containerDiv = x}>
+      <div style={ transitionOverlayActive ? preventScroll : containerDivStyle } ref={x => this.containerDiv = x}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
         <TransitionGroup>
           <Transition
