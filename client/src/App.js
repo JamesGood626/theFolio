@@ -18,7 +18,7 @@ import TransitionOverlay from './UtilComponents/TransitionOverlay'
 const Section = styled.section`
   position: absolute;
   z-index: 1000;
-  overflow: auto;
+  overflow-y: scroll;
   width: 100vw;
 `
 
