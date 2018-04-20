@@ -116,9 +116,7 @@ class App extends Component {
     }
     const containerDivStyle = {
       'height': '100%',
-      'width': '100vw',
-      'overflowY': 'scroll',
-      'WebkitOverflowScrolling': 'touch'
+      'width': '100vw'
     }
     // const overflowScrolling = {
     //   'WebkitOverflowScrolling': 'touch'

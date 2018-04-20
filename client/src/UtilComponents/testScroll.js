@@ -4,9 +4,8 @@ import styled from 'styled-components'
 import Navbar from '../Pages/Navbar'
 
 const ContainerDiv = styled.div`
+  height: 100%;
   width: 100vw;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 `
 
 const Section = styled.section`

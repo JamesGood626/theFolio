@@ -10,7 +10,7 @@ const Div = styled.div`
   height: 100%;
   width: 100vw;
   margin-bottom: 2.4rem;
-  background-color: orange;
+  background-color: #62bbc1;
 `
 
 class Contact extends Component {
