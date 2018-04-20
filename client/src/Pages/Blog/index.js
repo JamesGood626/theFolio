@@ -11,6 +11,7 @@ const Section = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   width: 90%;
   margin: 0 auto;
   margin-top: 1rem;

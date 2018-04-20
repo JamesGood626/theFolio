@@ -9,6 +9,7 @@ import styled from 'styled-components'
 
 const ContainerDiv = styled.div`
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   width: 100vw;
   background-color: yellow;
   margin-bottom: 2.4rem;

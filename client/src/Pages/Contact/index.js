@@ -8,6 +8,7 @@ import Form from './Form'
 
 const Div = styled.div`
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   width: 100vw;
   margin-bottom: 2.4rem;
   background-color: orange;
