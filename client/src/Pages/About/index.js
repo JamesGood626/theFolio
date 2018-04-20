@@ -10,7 +10,7 @@ import moto828 from './moto-828.png'
 const Div = styled.div`
   height: 100%;
   width: 100vw;
-  background-color: limegreen;
+  background-color: purple;
   margin-bottom: 2.4rem;
 `
 
