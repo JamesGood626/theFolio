@@ -10,8 +10,10 @@ import moto828 from './moto-828.png'
 const Div = styled.div`
   height: 100%;
   width: 100vw;
-  background-color: purple;
+  background-color: blue;
   margin-bottom: 2.4rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 `
 
 const P = styled.p`
