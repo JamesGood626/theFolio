@@ -6,6 +6,7 @@ import Navbar from '../Pages/Navbar'
 const ContainerDiv = styled.div`
   height: 100vh;
   width: 100vw;
+  z-index: 1001;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 `
@@ -34,7 +35,7 @@ class TestScroll extends Component {
       <ContainerDiv>
         <Navbar location="/" menuItems={ navItems }/>
         <Section>
-        <Div style={{'backgroundColor': 'blue'}}>
+        <Div style={{'backgroundColor': 'pink'}}>
           <P>
             Lorem ipsum dolor sit amet, ei pri solet quodsi alterum, volumus molestie pro at, inimicus euripidis eu ius. Vim doming civibus indoctum ex, ne purto fabulas scribentur vis. Rebum luptatum ne est, solet ubique maiorum te his, cu graeci omnesque expetendis nec. Nec postulant facilisis at.
 
