@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../../actions'
 import Smackdown from 'react-smackdown'
-import { javascript } from 'react-syntax-highlighter/dist/languages'
+import { javascript, xml, css } from 'react-syntax-highlighter/dist/languages'
 import { irBlack } from 'react-syntax-highlighter/dist/styles'
 import styled from 'styled-components'
 
@@ -63,11 +63,16 @@ class BlogPost extends Component {
     }
     const syntax = {
       languages: [
+        { name: 'xml', syntax: xml },
+        { name: 'css', syntax: css },
         { name: 'javascript', syntax: javascript }
       ],
       showLineNumbers: true,
       lineNumberStyle: { opacity: .5 },
       theme: irBlack
+    }
+    if (this.state.post) {
+      console.log(this.state.post.postStore.postBody)
     }
     return (
         <ContainerDiv>

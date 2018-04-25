@@ -28,8 +28,8 @@ body {
   position: absolute;
   top: 25%;
   z-index: 9000;
-  height: 3rem;
-  width: 3rem;
+  height: 4rem;
+  width: 4rem;
   transform: rotate(46.5deg);
 }
 
