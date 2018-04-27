@@ -71,9 +71,6 @@ class BlogPost extends Component {
       lineNumberStyle: { opacity: .5 },
       theme: irBlack
     }
-    if (this.state.post) {
-      console.log(this.state.post.postStore.postBody)
-    }
     return (
         <ContainerDiv>
             { this.state.post ?

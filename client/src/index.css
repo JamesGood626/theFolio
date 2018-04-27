@@ -15,6 +15,9 @@ html, body {
 
 body {
   -webkit-overflow-scrolling: touch;
+
+  /* Testing this for mobile temporarily */
+  -webkit-overscroll-behavior: contain;
 }
 
 .homeContainerDiv {
