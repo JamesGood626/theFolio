@@ -33,7 +33,6 @@ body {
   z-index: 9000;
   height: 4rem;
   width: 4rem;
-  transform: rotate(46.5deg);
 }
 
 .ninjaStar:hover {
@@ -43,9 +42,14 @@ body {
 @media (min-width: 742px) { 
   .ninjaStar {
     top: 40%;
-    height: 4rem;
-    width: 4rem;
+    height: 5rem;
+    width: 5rem;
   }
+}
+
+#maskedStar {
+  height: 2rem;
+  width: 2rem;
 }
 
 .overlay {

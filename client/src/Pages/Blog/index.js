@@ -42,7 +42,7 @@ const TitleDiv = Div.extend`
   margin-bottom: .5rem;
   width: 100%;
   height: 5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
 `
 
 class Blog extends Component {

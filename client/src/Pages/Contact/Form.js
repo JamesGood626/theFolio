@@ -73,15 +73,13 @@ class Form extends Component {
         <Div>Success!</Div>
       )
     }
-    else {  
-      return (
-        <CenteredForm onSubmit={handleSubmit(onSubmit)}>
-          {this.renderFields()} 
-          <Field label="Project Information" name="projectInfo" type="text" component={TextArea} />
-          <FormBtn type="submit">Submit</FormBtn>
-        </CenteredForm>
-      )
-    }
+    return (
+      <CenteredForm onSubmit={ handleSubmit(onSubmit) }>
+        { this.renderFields() } 
+        <Field label="Project Information" name="projectInfo" type="text" component={ TextArea }/>
+        <FormBtn type="submit">Submit</FormBtn>
+      </CenteredForm>
+    )
   }
 }
 
