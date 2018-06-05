@@ -27,10 +27,10 @@ const P = styled.p`
 
 const A = styled.a`
   text-decoration: none;
-  color: #35e0f0;
+  color: #E3170A;
 
   &:hover {
-    color: #d0ccd0;
+    color: #35E0F0;
   }
 `
 
@@ -43,10 +43,7 @@ class About extends Component {
             <P>
               From and currently live in Phoenix, Arizona. Code, piano, and motorcycles. That's a high level introduction
               to my background and interests. I've learned the majority of my web development skills 
-              through myriad online resources and documentation. My current short term learning goals are 
-              to become more proficient at solving algorithms, threejs, and TDD; or anything else that 
-              may be necessary to complete a project. I'll be blogging about my future learning experiences, 
-              don't mind the three test posts at the moment, it'll soon be filled with glorious knowledge.
+              using online resources and documentation. Determined to continue learning and growing as a Software Engineer.
               Here is my <A href="https://github.com/JamesGood626">github</A> if you'd like to see some of my code.
             </P>
         </Image>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
+import { connect } from 'react-redux'
 import Menu from './Menu'
 import Header from './header'
 import Loader from '../../UtilComponents/Loader'
@@ -31,6 +31,12 @@ class Home extends Component {
 		document.body.style.overflowY = 'hidden'
 	}
 
+	componentDidUpdate(prevProps) {
+		if(prevProps.loading !== this.props.loading && !this.props.loading) {
+			this.toggleLoader()
+		}
+	}
+
 	componentWillUnmount() {
 		this.setState((prevState, state) => ({
 			mountComponent: !prevState.mountComponent
@@ -59,10 +65,14 @@ class Home extends Component {
 				<Menu/>
 				<Header>Web Developer</Header>
 				{ (showLoader || !mountComponent) && <Loader/> }
-				{ mountComponent && <Renderer toggleLoader={ this.toggleLoader }/> }
+				{ mountComponent && <Renderer/> }
 			</div>
 		)
 	}
 }
 
-export default Home
+function mapStateToProps({ loading }) {
+  return { loading }
+}
+
+export default connect(mapStateToProps, null)(Home)

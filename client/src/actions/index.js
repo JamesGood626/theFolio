@@ -1,12 +1,23 @@
 import axios from 'axios'
-import { SEND_EMAIL } from './types'
-import { FETCH_POSTS } from './types'
+import {
+	LOADING,
+	LOADING_FINISHED,
+	SEND_EMAIL,
+	FETCH_POSTS
+} from './types'
 // import SPACE_ID from './config'
 // import ACCESS_TOKEN from './config'
 // check your email to resolving heroku config vars on client
 
 const BASE_URL = 'https://cdn.contentful.com/'
 
+export const startLoading = values => async dispatch => {
+  dispatch({ type: LOADING })
+}
+
+export const finishLoading = values => async dispatch => {
+  dispatch({ type: LOADING_FINISHED })
+}
 
 export const sendEmail = values => async dispatch => {
   const req = await axios.post('/contact/send', values)

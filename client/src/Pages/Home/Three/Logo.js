@@ -1,4 +1,6 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { finishLoading } from '../../../actions'
 import { JSONLoader, Mesh } from 'three'
 
 class Logo extends Component {
@@ -9,8 +11,8 @@ class Logo extends Component {
   }
   
 
-  componentWillMount() {
-    let { scene } = this.props
+  componentDidMount() {
+    let { scene, finishLoading } = this.props
 
     this.loader.load("./logo.json", function(geometry, materials) {
         let mesh = new Mesh(geometry, materials[0])
@@ -19,6 +21,7 @@ class Logo extends Component {
         mesh.position.y = -12.5
         mesh.position.x = -11
         scene.add(mesh)
+        finishLoading()
     })
   }
 
@@ -31,4 +34,4 @@ class Logo extends Component {
   }
 }
 
-export default Logo
+export default connect(null, { finishLoading })(Logo)

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { startLoading } from '../../../actions'
 import { WebGLRenderer } from 'three'
 import Scene from './Scene'
 import Camera from './Camera'
@@ -36,7 +38,8 @@ class Renderer extends Component {
   componentDidMount() {
     // ComponentDidMount won't fire until the scene has been retrieved by this.getScene
     // The set timeout ensures that the model is loaded before loader is removed.
-    setTimeout(this.props.toggleLoader, 2500)
+    this.props.startLoading()
+    // setTimeout(this.props.toggleLoader, 2500)
     let { screenWidth, screenHeight } = this.state
     let { renderer } = this
     document.body.appendChild(this.container)
@@ -210,7 +213,7 @@ class Renderer extends Component {
   }
 }
 
-export default Renderer
+export default connect(null, { startLoading })(Renderer)
 
 
 // Just to quickly Recap what's going on here.
