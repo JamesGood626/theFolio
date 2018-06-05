@@ -23,7 +23,7 @@ class Home extends Component {
 			this.setState((prevState, state) => ({
 				mountComponent: !prevState.mountComponent
 			}))
-		}, 950)
+		}, 1800)
 		if(this.containerDiv) {
 			this.containerDiv.addEventListener('wheel', this.preventScroll)
 			this.containerDiv.addEventListener('touchmove', this.preventScroll)

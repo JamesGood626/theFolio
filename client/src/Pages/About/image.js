@@ -28,7 +28,7 @@ const Div = styled.div`
   
 `
 
-const Image = (props) => {
+const Image = props => {
   return <Div passStyle={ props.style } image={ props.image }>{ props.children }</Div>
 }
 

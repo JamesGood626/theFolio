@@ -26,7 +26,7 @@ export const sendEmail = values => async dispatch => {
 }
 
 export const fetchPosts = (key = null) => async dispatch => {
-	const posts = await axios.get(`${BASE_URL}spaces/${process.env.REACT_APP_SPACE_ID}/entries?access_token=${process.env.REACT_APP_ACCESS_TOKEN}`)
+	const posts = await axios.get(`${ BASE_URL }spaces/${ process.env.REACT_APP_SPACE_ID }/entries?access_token=${ process.env.REACT_APP_ACCESS_TOKEN }`)
 		let refinedPosts = posts.data.items.reduce((obj, post) => {
 		let postObj = {}
 		let postId = post.fields.postTitle.replace(/\s/g, "-").toLowerCase()

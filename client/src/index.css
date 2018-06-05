@@ -78,10 +78,10 @@ body {
 
 #whiteOverlay {
   /* maintains whiteOverlay's middle position during transition animation */
-  z-index: 3500;
   background-color: #f2f2f2;
 }
 
 #blueOverlay {
+  z-index: 3500;
   background-color: #35e0f0;
 }

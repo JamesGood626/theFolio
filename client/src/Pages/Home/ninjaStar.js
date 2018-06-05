@@ -10,7 +10,6 @@ class NinjaStar extends Component {
 
   rotateStarAndToggle = () => {
     if(!this.props.modalOpen) {
-      console.log(this.star)
       TweenMax.to(this.star, 0.5, {rotation:181})
     }
     else {

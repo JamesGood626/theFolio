@@ -36,7 +36,12 @@ const A = styled.a`
 
 class About extends Component {
   render() {
-    const images = {'three': moto350,'four': moto472, 'six': moto665, 'eight': moto828}
+    const images = { 
+      'three': moto350,
+      'four': moto472, 
+      'six': moto665, 
+      'eight': moto828 
+    }
     return (
       <Div>
         <Image image={ images }>
