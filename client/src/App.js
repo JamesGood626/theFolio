@@ -95,7 +95,7 @@ class App extends Component {
     }
     if (this.props.location.pathname !== '/' && !this.state.navVisible) {
       setTimeout(this.toggleNav, 1000)
-      if (document.body.style.overflowY != 'scroll') {
+      if (document.body.style.overflowY !== 'scroll') {
         document.body.style.overflowY = 'scroll'
       }
     }
@@ -108,9 +108,6 @@ class App extends Component {
     }
 	}
 
-  // leaveTransition(node) {
-  //   console.log('LEAVE TRANSITION RUNNING')
-  // }
   render() {
     const preventScroll = {
       'overflow': 'hidden',
