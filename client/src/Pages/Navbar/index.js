@@ -29,9 +29,7 @@ const Ul = styled.ul`
   height: 100%;
   font-size: 1rem;
 
-
-  @media (min-width: 742px) {
-    font-size: 1.8rem;
+  @media screen and (min-width: 742px) {
     width: 30rem;
   }
 `
@@ -41,6 +39,10 @@ const Li = styled.li`
 
   &:hover {
     color: #d0ccd0;
+  }
+
+  @media screen and (min-width: 742px) {
+    font-size: 1.4rem;
   }
 `
 
@@ -52,10 +54,10 @@ const navbar = ({ location, menuItems, homeRouteStyle }) => {
   return(
     <Div style={ homeRouteStyle }>
       <Ul>      
-        { menuItems.map(menuItem => {
+        { menuItems.map((menuItem, i) => {
             return (
               <Link key={ menuItem.name } style={{ 'textDecoration': 'none' }} to={ menuItem.path }>
-                <Li style={ (menuItem.path === location.pathname) ? active : null }>{ menuItem.name }</Li>
+                <Li tabIndex={ i } style={ (menuItem.path === location.pathname) ? active : null }>{ menuItem.name }</Li>
               </Link>
             )
           })

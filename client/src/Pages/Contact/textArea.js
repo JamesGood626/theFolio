@@ -13,10 +13,15 @@ const Label = styled.label`
   color: #274156;
   position: relative;
   top: 1.25rem;
+  font-size: 0.8rem;
+
+  @media screen and (min-width: 742px) {
+    font-size: 1rem;
+  }
 `
 
 const StyledTextArea = styled.textarea`
-  width: 90vw;
+  width: 75vw;
   height: 20vh; 
   border-radius: 0.625rem;
   position: relative;
@@ -31,8 +36,12 @@ const StyledTextArea = styled.textarea`
   resize: none;
   margin-bottom: 1.5rem;
 
-  @media (min-width: 500px) {
+  @media screen and (min-width: 1024px) {
     width: 50vw;
+  }
+
+  @media screen and (min-width: 500px) {
+    width: 60vw;
   }
 
   &:focus {

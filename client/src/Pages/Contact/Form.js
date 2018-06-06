@@ -18,15 +18,15 @@ const CenteredForm = styled.form`
 `
 
 const FormBtn = styled.button`
-    margin: 1.5rem 0;
-    padding: 1rem;
-    width: 10rem;
-    background-color: rgba(0,0,0,0);
-    border: 2px solid #35e0f0;
-    font-family: 'Play', sans-serif;
-    color: #35e0f0;
-    box-shadow: inset 0 0 0 0 #35e0f0;
-    transition: .8s ease-out;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  width: 10rem;
+  background-color: rgba(0,0,0,0);
+  border: 2px solid #35e0f0;
+  font-family: 'Play', sans-serif;
+  color: #35e0f0;
+  box-shadow: inset 0 0 0 0 #35e0f0;
+  transition: .8s ease-out;
 
   &:hover {
     box-shadow: inset 0 0 3.125rem 3.125rem #35e0f0; 
