@@ -25,15 +25,6 @@ const P = styled.p`
   }
 `
 
-const A = styled.a`
-  text-decoration: none;
-  color: #E3170A;
-
-  &:hover {
-    color: #35E0F0;
-  }
-`
-
 class About extends Component {
   render() {
     // const images = { 
@@ -49,7 +40,7 @@ class About extends Component {
               From and currently live in Phoenix, Arizona. Code, piano, and motorcycles. That's a high level introduction
               to my background and interests. I've learned the majority of my web development skills 
               using online resources and documentation. Determined to continue learning and growing as a Software Engineer.
-              Here is my <A href="https://github.com/JamesGood626">github</A> if you'd like to see some of my code.
+              Here is my <a href="https://github.com/JamesGood626">github</a> if you'd like to see some of my code.
             </P>
         </Image>
       </Div>

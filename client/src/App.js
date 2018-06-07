@@ -7,10 +7,9 @@ import styled from 'styled-components'
 
 import Navbar from './Pages/Navbar'
 import Home from './Pages/Home'
-import Blog from './Pages/Blog'
+import Projects from './Pages/Projects'
 import Contact from './Pages/Contact'
 import About from './Pages/About'
-import BlogPost from './Pages/Blog/BlogPost'
 
 import TransitionOverlay from './UtilComponents/TransitionOverlay'
 
@@ -128,7 +127,7 @@ class App extends Component {
     }
     let { location } = this.props
     const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
-    const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
+    const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Projects', path: '/projects'}, {name: 'Contact', path: '/contact'}]
     return (
       <div style={ transitionOverlayActive ? preventScroll : containerDivStyle } ref={x => this.containerDiv = x}>
         <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
@@ -148,9 +147,8 @@ class App extends Component {
               <Switch location={ location }>
                 <Route exact path="/" component={ Home }/>
                 <Route exact path="/about" component={ About }/>
-                <Route exact path="/blog" component={ Blog }/>
+                <Route exact path="/projects" component={ Projects }/>
                 <Route exact path="/contact" component={ Contact }/>
-                <Route exact path="/blog/:postId" component={ BlogPost }/>
               </Switch>
             </Section>
           </Transition>

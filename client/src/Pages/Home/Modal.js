@@ -34,7 +34,7 @@ const Span = styled.span`
 class Modal extends Component {
   // }
   render() {
-    const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Blog', path: '/blog'}, {name: 'Contact', path: '/contact'}]
+    const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Projects', path: '/projects'}, {name: 'Contact', path: '/contact'}]
     const activeLink = {
       'color': '#274156'
     }
@@ -52,8 +52,8 @@ class Modal extends Component {
           <Link style={ navItemPositioning } to='/about'>
             <Span>About</Span>
           </Link>
-          <Link style={ navItemPositioning } to='/blog'>
-            <Span>Blog</Span>
+          <Link style={ navItemPositioning } to='/projects'>
+            <Span>Projects</Span>
           </Link>
           <Link style={ navItemPositioning } to='/contact'>
             <Span>Contact</Span>

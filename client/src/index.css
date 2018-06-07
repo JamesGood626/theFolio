@@ -20,6 +20,17 @@ body {
   -webkit-overscroll-behavior: contain;
 }
 
+a {
+  text-decoration: none;
+  color: #E3170A;
+}
+
+a:hover {
+  color: #35E0F0;
+}
+
+
+
 .homeContainerDiv {
   height: 100vh;
 	width: 100vw;
@@ -115,4 +126,9 @@ body {
   .aboutBgImg {
     background: url('./images/moto-828.png') no-repeat;
   }
+}
+
+.projectImage {
+  height: 200px;
+  width: 200px;
 }

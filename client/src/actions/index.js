@@ -35,6 +35,7 @@ export const fetchPosts = (key = null) => async dispatch => {
 		postObj['postStore'] = post.fields
 		return obj
 	}, {})
+	console.log('refinedPosts: ', refinedPosts)
 	dispatch({ type: FETCH_POSTS, payload: refinedPosts })
 	if(key !== null) {
 		return refinedPosts[key]
