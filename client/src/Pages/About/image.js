@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from "react";
+// import styled from 'styled-components'
 
 // const Div = styled.div`
 //   display: flex;
@@ -21,7 +21,7 @@ import styled from 'styled-components'
 //     width: 80%;
 //     background: url(${(props) => props.image.six }) no-repeat;
 //   }
-  
+
 //   @media (min-width: 1100px) {
 //     background: url(${(props) => props.image.eight }) no-repeat;
 //   }
@@ -29,8 +29,8 @@ import styled from 'styled-components'
 
 class Image extends Component {
   render() {
-    return <div className="aboutBgImg">{ this.props.children }</div>
+    return <div className="aboutBgImg">{this.props.children}</div>;
   }
 }
 
-export default Image
+export default Image;
