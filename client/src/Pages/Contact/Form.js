@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
-import styled from 'styled-components'
-import { connect } from 'react-redux'
-import { sendEmail } from '../../actions'
-import { Field, reduxForm } from 'redux-form'
-import Input from './input'
-import TextArea from './textArea'
-import validateEmails from '../../utils/validateEmail'
-
+import React, { Component } from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { sendEmail } from "../../actions";
+import { Field, reduxForm } from "redux-form";
+import Input from "./input";
+import TextArea from "./textArea";
+import validateEmails from "../../utils/validateEmail";
 
 const CenteredForm = styled.form`
   display: flex;
@@ -15,24 +14,24 @@ const CenteredForm = styled.form`
   align-items: center;
   margin-top: 1rem;
   width: 100vw;
-`
+`;
 
 const FormBtn = styled.button`
   margin: 1.5rem 0;
   padding: 1rem;
   width: 10rem;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border: 2px solid #35e0f0;
-  font-family: 'Play', sans-serif;
+  font-family: "Play", sans-serif;
   color: #35e0f0;
   box-shadow: inset 0 0 0 0 #35e0f0;
-  transition: .8s ease-out;
+  transition: 0.8s ease-out;
 
   &:hover {
-    box-shadow: inset 0 0 3.125rem 3.125rem #35e0f0; 
+    box-shadow: inset 0 0 3.125rem 3.125rem #35e0f0;
     color: #f2f2f2;
   }
-`
+`;
 
 const Div = styled.div`
   width: 100vw;
@@ -40,70 +39,77 @@ const Div = styled.div`
   margin: auto;
   font-size: 2rem;
   color: #274156;
-`
+`;
 
 const FIELDS = [
-  { name: 'name', label: 'Name' },
-  { name: 'email', label: 'Email Address' },
-  { name: 'phoneNumber', label: 'Phone Number' },
-  { name: 'currentSite', label: 'Current Site' }
-]
+  { name: "name", label: "Name" },
+  { name: "email", label: "Email Address" },
+  { name: "phoneNumber", label: "Phone Number" },
+  { name: "currentSite", label: "Current Site" }
+];
 
 class Form extends Component {
   renderFields() {
-    return FIELDS.map( ({ label, name }) => {
+    return FIELDS.map(({ label, name }) => {
       return (
-          <Field
-            key={ name }
-            label={ label }
-            name={ name }
-            type="text"
-            component={ Input } 
-          />
-      )
-    })
+        <Field
+          key={name}
+          label={label}
+          name={name}
+          type="text"
+          component={Input}
+        />
+      );
+    });
   }
-  
+
   render() {
-    const { handleSubmit, submitSucceeded } = this.props
-    const onSubmit = (values) => {this.props.sendEmail(values)}
-    
-    if(submitSucceeded) {
-      return (
-        <Div>Success!</Div>
-      )
+    const { handleSubmit, submitSucceeded } = this.props;
+    const onSubmit = values => {
+      this.props.sendEmail(values);
+    };
+
+    if (submitSucceeded) {
+      return <Div>Success!</Div>;
     }
     return (
-      <CenteredForm onSubmit={ handleSubmit(onSubmit) }>
-        { this.renderFields() } 
-        <Field label="Project Information" name="projectInfo" type="text" component={ TextArea }/>
+      <CenteredForm onSubmit={handleSubmit(onSubmit)}>
+        {this.renderFields()}
+        <Field
+          label="Project Information"
+          name="projectInfo"
+          type="text"
+          component={TextArea}
+        />
         <FormBtn type="submit">Submit</FormBtn>
       </CenteredForm>
-    )
+    );
   }
 }
 
 function validate(values) {
-  const errors = {}
+  const errors = {};
 
-  errors.email = validateEmails(values.email || '')
+  errors.email = validateEmails(values.email || "");
 
-  if(!values.name || values.name.length < 3) {
-    errors.name = 'Enter your Name'
+  if (!values.name || values.name.length < 3) {
+    errors.name = "Enter your Name";
   }
-  if(!values.email) {
-    errors.email = 'Enter your Email Address'
+  if (!values.email) {
+    errors.email = "Enter your Email Address";
   }
-  if(!values.projectInfo) {
-    errors.projectInfo = 'Please provide some information about your project'
+  if (!values.projectInfo) {
+    errors.projectInfo = "Please provide some information about your project";
   }
-  return errors
+  return errors;
 }
-
 
 export default reduxForm({
   validate,
-  form: 'HireRequestForm'
+  form: "HireRequestForm"
 })(
-  connect(null, { sendEmail })(Form)
-)
+  connect(
+    null,
+    { sendEmail }
+  )(Form)
+);

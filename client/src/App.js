@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { Route, Switch } from "react-router-dom";
 import { TransitionGroup, Transition } from "react-transition-group";
-// import { TweenMax } from 'gsap'
 import styled from "styled-components";
 
 import Navbar from "./Pages/Navbar";

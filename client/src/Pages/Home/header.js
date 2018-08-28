@@ -1,6 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
-
+import React from "react";
+import styled from "styled-components";
 
 const P = styled.p`
   position: absolute;
@@ -19,14 +18,10 @@ const P = styled.p`
   @media (min-width: 742px) {
     font-size: 3rem;
   }
-`
+`;
 
-const Header = (props) => {
-  return (
-      <P>{ props.children }</P>
-  )
-}
+const Header = props => {
+  return <P>{props.children}</P>;
+};
 
-export default Header
-
-
+export default Header;

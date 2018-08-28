@@ -1,7 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Div = styled.div`
   display: flex;
@@ -17,7 +16,7 @@ const Div = styled.div`
   height: 7rem;
   padding: 0 1rem;
   width: 90%;
-`
+`;
 
 const Ul = styled.ul`
   display: flex;
@@ -32,7 +31,7 @@ const Ul = styled.ul`
   @media screen and (min-width: 742px) {
     width: 30rem;
   }
-`
+`;
 
 const Li = styled.li`
   color: #828489;
@@ -44,27 +43,34 @@ const Li = styled.li`
   @media screen and (min-width: 742px) {
     font-size: 1.4rem;
   }
-`
-
+`;
 
 const navbar = ({ location, menuItems, homeRouteStyle }) => {
   const active = {
-    'color': '#274156'
-  }
-  return(
-    <Div style={ homeRouteStyle }>
-      <Ul>      
-        { menuItems.map((menuItem, i) => {
-            return (
-              <Link key={ menuItem.name } style={{ 'textDecoration': 'none' }} to={ menuItem.path }>
-                <Li tabIndex={ i } style={ (menuItem.path === location.pathname) ? active : null }>{ menuItem.name }</Li>
-              </Link>
-            )
-          })
-        }
+    color: "#274156"
+  };
+  return (
+    <Div style={homeRouteStyle}>
+      <Ul>
+        {menuItems.map((menuItem, i) => {
+          return (
+            <Link
+              key={menuItem.name}
+              style={{ textDecoration: "none" }}
+              to={menuItem.path}
+            >
+              <Li
+                tabIndex={i}
+                style={menuItem.path === location.pathname ? active : null}
+              >
+                {menuItem.name}
+              </Li>
+            </Link>
+          );
+        })}
       </Ul>
     </Div>
-  )
-}
+  );
+};
 
-export default navbar
+export default navbar;

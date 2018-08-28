@@ -9,7 +9,6 @@ import Renderer from "./Three/Renderer";
 class Home extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       mountComponent: false,
       showLoader: true

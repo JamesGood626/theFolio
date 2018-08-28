@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-// import { TweenMax } from 'gsap'
 
 const Div = styled.div`
   display: flex;

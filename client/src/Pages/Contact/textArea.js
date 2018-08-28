@@ -1,13 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-
+import React from "react";
+import styled from "styled-components";
 
 const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   font-weight: 300;
-`
+`;
 
 const Label = styled.label`
   color: #274156;
@@ -18,18 +17,18 @@ const Label = styled.label`
   @media screen and (min-width: 742px) {
     font-size: 1rem;
   }
-`
+`;
 
 const StyledTextArea = styled.textarea`
   width: 75vw;
-  height: 20vh; 
+  height: 20vh;
   border-radius: 0.625rem;
   position: relative;
   margin-top: 1.875rem;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   padding: 0.625rem;
   border: 1px solid #274156;
-  box-shadow: 2px #777;  
+  box-shadow: 2px #777;
   border-radius: 0;
   transition: border 0.1s;
   color: #274156;
@@ -51,7 +50,7 @@ const StyledTextArea = styled.textarea`
     border-right: solid 1px #35e0f0;
     border-top: solid 1px #35e0f0;
   }
-`
+`;
 
 const FormError = styled.div`
   text-align: center;
@@ -59,19 +58,16 @@ const FormError = styled.div`
   max-width: 90vw;
   margin-top: -20px;
   margin-bottom: 20px;
-`
-
+`;
 
 const TextArea = ({ input, label, name, meta: { error, touched } }) => {
-    return (
-      <Section>
-        <Label>{label}</Label>  
-        <StyledTextArea {...input} id={name}></StyledTextArea>
-          <FormError>
-            { touched && error }
-          </FormError>
-      </Section>
-    )
-}
+  return (
+    <Section>
+      <Label>{label}</Label>
+      <StyledTextArea {...input} id={name} />
+      <FormError>{touched && error}</FormError>
+    </Section>
+  );
+};
 
-export default TextArea
+export default TextArea;

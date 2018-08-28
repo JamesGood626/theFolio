@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { startLoading } from '../../../actions'
-import { WebGLRenderer } from 'three'
-import Scene from './Scene'
-import Camera from './Camera'
-import Lights from './Lights'
-import Logo from './Logo'
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { startLoading } from "../../../actions";
+import { WebGLRenderer } from "three";
+import Scene from "./Scene";
+import Camera from "./Camera";
+import Lights from "./Lights";
+import Logo from "./Logo";
 
 class Renderer extends Component {
   constructor(props) {
-    super(props)
-
+    super(props);
     this.state = {
       camera: null,
       scene: null,
@@ -19,202 +17,194 @@ class Renderer extends Component {
       mouseY: 0,
       screenWidth: window.innerWidth,
       screenHeight: window.innerHeight,
-      windowHalfX: (window.innerWidth/2),
-      windowHalfY: (window.innerHeight/2)
-    }
+      windowHalfX: window.innerWidth / 2,
+      windowHalfY: window.innerHeight / 2
+    };
 
-    this.renderer = new WebGLRenderer({ antialias: true })
+    this.renderer = new WebGLRenderer({ antialias: true });
 
-    this.animate = this.animate.bind(this)
-    this.threeRender = this.threeRender.bind(this)
-    this.getCamera = this.getCamera.bind(this)
-    this.getScene = this.getScene.bind(this)
-    this.isTouchDevice = this.isTouchDevice.bind(this)
-    this.onWindowResize = this.onWindowResize.bind(this)
-    this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this)
+    this.animate = this.animate.bind(this);
+    this.threeRender = this.threeRender.bind(this);
+    this.getCamera = this.getCamera.bind(this);
+    this.getScene = this.getScene.bind(this);
+    this.isTouchDevice = this.isTouchDevice.bind(this);
+    this.onWindowResize = this.onWindowResize.bind(this);
+    this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this);
   }
-
 
   componentDidMount() {
     // ComponentDidMount won't fire until the scene has been retrieved by this.getScene
     // The set timeout ensures that the model is loaded before loader is removed.
-    this.props.startLoading()
+    this.props.startLoading();
     // setTimeout(this.props.toggleLoader, 2500)
-    let { screenWidth, screenHeight } = this.state
-    let { renderer } = this
-    document.body.appendChild(this.container)
+    let { screenWidth, screenHeight } = this.state;
+    let { renderer } = this;
+    document.body.appendChild(this.container);
 
-    renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setSize(screenWidth, screenHeight)
-    renderer.domElement.style.position = "relative"
-    this.container.appendChild(renderer.domElement)
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(screenWidth, screenHeight);
+    renderer.domElement.style.position = "relative";
+    this.container.appendChild(renderer.domElement);
 
     renderer.gammaInput = true;
     renderer.gammaOutput = true;
     renderer.shadowMap.enabled = true;
 
-    window.addEventListener('resize', this.onWindowResize, false)
-    document.addEventListener('mousemove', this.onDocumentMouseMove, false)
+    window.addEventListener("resize", this.onWindowResize, false);
+    document.addEventListener("mousemove", this.onDocumentMouseMove, false);
   }
-
 
   componentWillUnmount() {
-    let { renderer } = this
-    document.body.removeChild(this.container)
+    let { renderer } = this;
+    document.body.removeChild(this.container);
 
-    cancelAnimationFrame(this.animationLoop)
-    window.removeEventListener('resize', this.onWindowResize, false)
-    document.removeEventListener('mousemove', this.onDocumentMouseMove, false)
+    cancelAnimationFrame(this.animationLoop);
+    window.removeEventListener("resize", this.onWindowResize, false);
+    document.removeEventListener("mousemove", this.onDocumentMouseMove, false);
 
-
-    renderer.dispose()
-    renderer.forceContextLoss()
-    renderer.context = undefined
-    renderer.domElement = undefined
+    renderer.dispose();
+    renderer.forceContextLoss();
+    renderer.context = undefined;
+    renderer.domElement = undefined;
   }
-  
+
   // This allows the component to update only on initial load to accomdate
   // Fetching of THREE scene and camera object references
   // After that, all setStates on mouseMove won't trigger a re-render
   // This will do for now, but I may need to refactor later.
   shouldComponentUpdate() {
-    let { state } = this
+    let { state } = this;
 
-    if((state.camera && state.scene) != null) {
-      return false
-    }
-    else {
-      return true
+    if ((state.camera && state.scene) != null) {
+      return false;
+    } else {
+      return true;
     }
   }
-
 
   componentDidUpdate() {
-    let { camera, scene } = this.state
-  
-    camera.lookAt( scene.position )
-    this.renderer.render(scene, camera)
-    this.animate()
-  }
+    let { camera, scene } = this.state;
 
+    camera.lookAt(scene.position);
+    this.renderer.render(scene, camera);
+    this.animate();
+  }
 
   animate() {
-    let { animate, threeRender } = this
+    let { animate, threeRender } = this;
 
-    this.animationLoop = requestAnimationFrame(animate)
-    threeRender()
+    this.animationLoop = requestAnimationFrame(animate);
+    threeRender();
   }
 
-
   threeRender() {
-    let { renderer } = this
-    let { camera, scene, mouseX, mouseY } = this.state
+    let { renderer } = this;
+    let { camera, scene, mouseX, mouseY } = this.state;
 
-    if(this.isTouchDevice()) {
-      if(camera.position) {
-        let timer = Date.now() * 0.0005
+    if (this.isTouchDevice()) {
+      if (camera.position) {
+        let timer = Date.now() * 0.0005;
 
-        camera.position.x = Math.sin(timer) * 120 * Math.cos(timer)
-        camera.position.z = Math.sin(timer) * 120 * Math.sin(timer)
+        camera.position.x = Math.sin(timer) * 120 * Math.cos(timer);
+        camera.position.z = Math.sin(timer) * 120 * Math.sin(timer);
 
-        camera.lookAt( scene.position )
+        camera.lookAt(scene.position);
       }
     }
 
-    camera.position.x += (mouseX/16 - camera.position.x) * .10
-    camera.position.y += (-mouseY/16 - camera.position.y) * .10
-    camera.lookAt(scene.position)
-    renderer.render(scene, camera)
+    camera.position.x += (mouseX / 16 - camera.position.x) * 0.1;
+    camera.position.y += (-mouseY / 16 - camera.position.y) * 0.1;
+    camera.lookAt(scene.position);
+    renderer.render(scene, camera);
   }
-
 
   getCamera(prop) {
-    this.setState(state => ({ ...state, camera: prop }))
+    this.setState(state => ({ ...state, camera: prop }));
   }
-
 
   getScene(prop) {
-    this.setState(state => ({ ...state, scene: prop }))
+    this.setState(state => ({ ...state, scene: prop }));
   }
-
 
   isTouchDevice() {
-    return (('ontouchstart' in window)
-      || (navigator.MaxTouchPoints > 0)
-      || (navigator.msMaxTouchPoints > 0));
+    return (
+      "ontouchstart" in window ||
+      navigator.MaxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0
+    );
   }
 
+  onDocumentMouseMove(event) {
+    let { windowHalfX, windowHalfY } = this.state;
 
-  onDocumentMouseMove( event ) {
-    let { windowHalfX, windowHalfY } = this.state
+    let newMouseX = event.clientX - windowHalfX;
+    let newMouseY = event.clientY - windowHalfY;
 
-    let newMouseX = (event.clientX - windowHalfX)
-    let newMouseY = (event.clientY - windowHalfY)
-
-    this.setState(state => ({ ...state, mouseX: newMouseX, mouseY: newMouseY }))
+    this.setState(state => ({
+      ...state,
+      mouseX: newMouseX,
+      mouseY: newMouseY
+    }));
   }
-
 
   onWindowResize(event) {
-    let { camera } = this.state
-    let { renderer } = this
+    let { camera } = this.state;
+    let { renderer } = this;
 
-    let newHalfX = (window.innerWidth/2)
-    let newHalfY = (window.innerHeight/2)
-    let newScreenWidth = window.innerWidth
-    let newScreenHeight = window.innerHeight
+    let newHalfX = window.innerWidth / 2;
+    let newHalfY = window.innerHeight / 2;
+    let newScreenWidth = window.innerWidth;
+    let newScreenHeight = window.innerHeight;
 
-    if(newScreenWidth <= 600) {
-      camera.position.z = 90
-    }
-    else if(newScreenWidth > 600 && newScreenWidth <= 1200) {
-      camera.position.z = 70
-    }
-    else {
-      camera.position.z = 50
+    if (newScreenWidth <= 600) {
+      camera.position.z = 90;
+    } else if (newScreenWidth > 600 && newScreenWidth <= 1200) {
+      camera.position.z = 70;
+    } else {
+      camera.position.z = 50;
     }
 
-    camera.aspect = (newScreenWidth/newScreenHeight)
-    camera.updateProjectionMatrix()
-    renderer.setSize(newScreenWidth, newScreenHeight)
+    camera.aspect = newScreenWidth / newScreenHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(newScreenWidth, newScreenHeight);
 
-    this.setState(state => ({ 
-      ...state, 
+    this.setState(state => ({
+      ...state,
       screenWidth: newScreenWidth,
       screenHeight: newScreenHeight,
-      windowHalfX: newHalfX, 
-      windowHalfY: newHalfY 
-    }))
+      windowHalfX: newHalfX,
+      windowHalfY: newHalfY
+    }));
   }
-
 
   render() {
     const containerDivStyle = {
-      'height': '100vh',
-      'width': '100vw',
-      'zIndex': '1'
-    }
+      height: "100vh",
+      width: "100vw",
+      zIndex: "1"
+    };
     return (
-      <div style={ containerDivStyle } ref={el => this.container = el}>
-        <Camera passUpProps={ this.getCamera }/>
-        <Scene passUpProps={ this.getScene }>
-          { scene => {
-              return (
-                <div>
-                  <Lights scene={ scene }/> 
-                  <Logo scene={ scene }/>
-                </div>
-              )
-            } 
-          }
+      <div style={containerDivStyle} ref={el => (this.container = el)}>
+        <Camera passUpProps={this.getCamera} />
+        <Scene passUpProps={this.getScene}>
+          {scene => {
+            return (
+              <div>
+                <Lights scene={scene} />
+                <Logo scene={scene} />
+              </div>
+            );
+          }}
         </Scene>
       </div>
-    )
+    );
   }
 }
 
-export default connect(null, { startLoading })(Renderer)
-
+export default connect(
+  null,
+  { startLoading }
+)(Renderer);
 
 // Just to quickly Recap what's going on here.
 // 1. Renderer is the top THREE component
@@ -237,5 +227,5 @@ export default connect(null, { startLoading })(Renderer)
 // passing getter functions to the respective components, triggering a second render upon load due to setState
 // and therefore having to throw a if/else statement in the shouldComponentUpdate
 
-// Ah, and perhaps refactor for more reusability (by passing props instead of setting camera.position.z = 50 for example within the child components) 
+// Ah, and perhaps refactor for more reusability (by passing props instead of setting camera.position.z = 50 for example within the child components)
 // in the future after the above has been settled

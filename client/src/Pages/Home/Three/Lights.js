@@ -11,7 +11,6 @@ class Lights extends Component {
 
   componentWillMount() {
     let { directionalLight, pointLight } = this;
-
     directionalLight.position.z = 300;
     directionalLight.position.y = -100;
     directionalLight.position.x = 10;

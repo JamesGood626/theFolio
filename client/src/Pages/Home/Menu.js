@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-//import { Link } from 'react-router-dom'
 import styled from "styled-components";
-
 import NinjaStar from "./ninjaStar";
 import Modal from "./Modal";
-
 import { TransitionGroup, Transition } from "react-transition-group";
 import { TweenMax } from "gsap";
 

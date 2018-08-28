@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-//import ReactDOM from 'react-dom'
-//import styled from 'styled-components'
 import { TweenMax } from "gsap";
 
 class TransitionOverlay extends Component {
