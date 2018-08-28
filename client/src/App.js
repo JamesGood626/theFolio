@@ -1,26 +1,16 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { Route, Switch } from "react-router-dom";
 import { TransitionGroup, Transition } from "react-transition-group";
 import styled from "styled-components";
-=======
-import React, { Component } from 'react'
-import { withRouter } from 'react-router'
-import { Route, Switch  } from 'react-router-dom'
-import { TransitionGroup, Transition } from 'react-transition-group'
-import { TweenMax } from 'gsap'
-import styled from 'styled-components'
->>>>>>> parent of 87f7400... Had to set height auto on project's section container.
 
-import Navbar from './Pages/Navbar'
-import Home from './Pages/Home'
-import Projects from './Pages/Projects'
-import Contact from './Pages/Contact'
-import About from './Pages/About'
+import Navbar from "./Pages/Navbar";
+import Home from "./Pages/Home";
+import Projects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
+import About from "./Pages/About";
 
-import TransitionOverlay from './UtilComponents/TransitionOverlay'
-
+import TransitionOverlay from "./UtilComponents/TransitionOverlay";
 
 const Section = styled.section`
   position: absolute;
@@ -28,63 +18,67 @@ const Section = styled.section`
   height: 100%;
   width: 100vw;
   -webkit-overflow-scrolling: touch;
-`
+`;
 
 // this.props.history.action provides PUSH or POP on each page navigation
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       transitionOverlayActive: false,
       precursorDeactivateTransitionOverlay: false,
-      navVisible: true 
-    }
+      navVisible: true
+    };
 
-    this.toggleNav = this.toggleNav.bind(this)
-    this.activateTransitionOverlay = this.activateTransitionOverlay.bind(this)
-    this.deactivatePrecursorTransitionOverlay = this.deactivatePrecursorTransitionOverlay.bind(this)
-    this.deactivateTransitionOverlay = this.deactivateTransitionOverlay.bind(this)
-    this.enterTransition = this.enterTransition.bind(this)
+    this.toggleNav = this.toggleNav.bind(this);
+    this.activateTransitionOverlay = this.activateTransitionOverlay.bind(this);
+    this.deactivatePrecursorTransitionOverlay = this.deactivatePrecursorTransitionOverlay.bind(
+      this
+    );
+    this.deactivateTransitionOverlay = this.deactivateTransitionOverlay.bind(
+      this
+    );
+    this.enterTransition = this.enterTransition.bind(this);
     // this.leaveTransition = this.leaveTransition.bind(this)
   }
 
   componentDidMount() {
-    if (this.props.location.pathname === '/') {
-      this.toggleNav()
+    if (this.props.location.pathname === "/") {
+      this.toggleNav();
     }
-    if(this.containerDiv) {
-      this.containerDiv.addEventListener('wheel', this.preventScroll)
-      this.containerDiv.addEventListener('touchstart', this.preventScroll)
+    if (this.containerDiv) {
+      this.containerDiv.addEventListener("wheel", this.preventScroll);
+      this.containerDiv.addEventListener("touchstart", this.preventScroll);
     }
   }
-  
+
   componentWillUnmount() {
-    this.containerDiv.removeEventListener('wheel', this.preventScroll)
-    this.containerDiv.removeEventListener('touchstart', this.preventScroll)
+    this.containerDiv.removeEventListener("wheel", this.preventScroll);
+    this.containerDiv.removeEventListener("touchstart", this.preventScroll);
   }
 
   toggleNav() {
     this.setState((prevState, state) => ({
       navVisible: !prevState.navVisible
-    }))
+    }));
   }
 
   activateTransitionOverlay() {
     this.setState((prevState, state) => ({
       transitionOverlayActive: !prevState.transitionOverlayActive
-    }))
+    }));
     this.setState((prevState, state) => ({
       precursorTransitionOverlayActive: !prevState.precursorTransitionOverlayActive
-    }))
-    setTimeout(this.deactivatePrecursorTransitionOverlay, 1000)
-    setTimeout(this.deactivateTransitionOverlay, 1800)
+    }));
+    setTimeout(this.deactivatePrecursorTransitionOverlay, 1000);
+    setTimeout(this.deactivateTransitionOverlay, 1800);
   }
 
   deactivateTransitionOverlay() {
     this.setState((prevState, state) => ({
       transitionOverlayActive: !prevState.transitionOverlayActive
-    }))
+    }));
   }
 
   // precursorTransitionOverlayActive is necessary to ensure the new transitioned page content will be
@@ -93,78 +87,98 @@ class App extends Component {
   deactivatePrecursorTransitionOverlay() {
     this.setState((prevState, state) => ({
       precursorTransitionOverlayActive: !prevState.precursorTransitionOverlayActive
-    }))
+    }));
   }
 
   enterTransition(node) {
-    if (this.props.location.pathname === '/') {
-      setTimeout(this.toggleNav, 1000)
+    if (this.props.location.pathname === "/") {
+      setTimeout(this.toggleNav, 1000);
     }
-    if (this.props.location.pathname !== '/' && !this.state.navVisible) {
-      setTimeout(this.toggleNav, 1000)
-      if (document.body.style.overflowY !== 'scroll') {
-        document.body.style.overflowY = 'scroll'
+    if (this.props.location.pathname !== "/" && !this.state.navVisible) {
+      setTimeout(this.toggleNav, 1000);
+      if (document.body.style.overflowY !== "scroll") {
+        document.body.style.overflowY = "scroll";
       }
     }
-    this.activateTransitionOverlay()
+    this.activateTransitionOverlay();
   }
 
   preventScroll = event => {
-    if(this.state.transitionOverlayActive) {
-      event.preventDefault()
+    if (this.state.transitionOverlayActive) {
+      event.preventDefault();
     }
-	}
+  };
 
   render() {
     const preventScroll = {
-      'overflow': 'hidden',
-      'position': 'absolute',
-      'height': '100vh',
-      'width': '100vw'
-    }
+      overflow: "hidden",
+      position: "absolute",
+      height: "100vh",
+      width: "100vw"
+    };
     const containerDivStyle = {
-      'height': '100%',
-      'width': '100vw'
-    }
+      height: "100%",
+      width: "100vw"
+    };
     // const overflowScrolling = {
     //   'WebkitOverflowScrolling': 'touch'
     // }
     const displayNone = {
       // This display none is crucial for preventing premature visibility of mounting component.
-      'display': 'none'
-    }
-    let { location } = this.props
-    const { transitionOverlayActive, precursorTransitionOverlayActive, navVisible } = this.state
-    const navItems = [{name: 'Home', path: '/'}, {name: 'About', path: '/about'}, {name: 'Projects', path: '/projects'}, {name: 'Contact', path: '/contact'}]
+      display: "none"
+    };
+    let { location } = this.props;
+    const {
+      transitionOverlayActive,
+      precursorTransitionOverlayActive,
+      navVisible
+    } = this.state;
+    const navItems = [
+      { name: "Home", path: "/" },
+      { name: "About", path: "/about" },
+      { name: "Projects", path: "/projects" },
+      { name: "Contact", path: "/contact" }
+    ];
     return (
-      <div style={ transitionOverlayActive ? preventScroll : containerDivStyle } ref={x => this.containerDiv = x}>
-        <Navbar homeRouteStyle={ navVisible ? null : displayNone } location={ location } menuItems={ navItems }/>
+      <div
+        style={transitionOverlayActive ? preventScroll : containerDivStyle}
+        ref={x => (this.containerDiv = x)}
+      >
+        <Navbar
+          homeRouteStyle={navVisible ? null : displayNone}
+          location={location}
+          menuItems={navItems}
+        />
         <TransitionGroup>
           <Transition
-            in={ this.props.in }
-            key={ location.pathname }
+            in={this.props.in}
+            key={location.pathname}
             timeout={{
               enter: 500,
-              exit: 500,
+              exit: 500
             }}
-            mountOnEnter={ false }
-            unmountOnExit={ true } 
-            onEnter={ this.enterTransition }
+            mountOnEnter={false}
+            unmountOnExit={true}
+            onEnter={this.enterTransition}
           >
-            <Section style={ precursorTransitionOverlayActive ? displayNone : null }>
-              <Switch location={ location }>
-                <Route exact path="/" component={ Home }/>
-                <Route exact path="/about" component={ About }/>
-                <Route exact path="/projects" component={ Projects }/>
-                <Route exact path="/contact" component={ Contact }/>
+            <Section
+              style={precursorTransitionOverlayActive ? displayNone : null}
+            >
+              <Switch location={location}>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/projects" component={Projects} />
+                <Route exact path="/contact" component={Contact} />
               </Switch>
             </Section>
           </Transition>
         </TransitionGroup>
-        { transitionOverlayActive ? <TransitionOverlay action={ this.props.history.action }/> : null}
-      </div> 
-    )
+        {transitionOverlayActive ? (
+          <TransitionOverlay action={this.props.history.action} />
+        ) : null}
+      </div>
+    );
   }
 }
 
-export default withRouter(App)
+export default withRouter(App);

@@ -13,18 +13,24 @@ class Lights extends Component {
 
   componentWillMount() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     let { directionalLight, pointLight } = this;
     directionalLight.position.z = 300;
     directionalLight.position.y = -100;
     directionalLight.position.x = 10;
     directionalLight.intensity = 0.4;
 =======
+=======
+>>>>>>> parent of 87f7400... Had to set height auto on project's section container.
     let { directionalLight, pointLight } = this
 
     directionalLight.position.z = 300
     directionalLight.position.y = -100
     directionalLight.position.x = 10
     directionalLight.intensity = 0.4
+<<<<<<< HEAD
+>>>>>>> parent of 87f7400... Had to set height auto on project's section container.
+=======
 >>>>>>> parent of 87f7400... Had to set height auto on project's section container.
 
     pointLight.position.y = 0

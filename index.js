@@ -2,10 +2,13 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
-const KEYS = require("./config/prod_keys");
-var api_key = KEYS.API_KEY;
-var domain = KEYS.DOMAIN;
-var mailgun = require("mailgun-js")({ apiKey: api_key, domain: domain });
+// const KEYS = require("./config/prod_keys");
+// var api_key = KEYS.API_KEY;
+// var domain = KEYS.DOMAIN;
+var mailgun = require("mailgun-js")({
+  apiKey: process.env.API_KEY,
+  domain: process.env.DOMAIN
+});
 
 app.use(express.static(path.join(__dirname, "client/build")));
 
@@ -40,11 +43,11 @@ app.post("/contact/send", (req, res) => {
   });
 });
 
-app.get("/config.js", function(req, res) {
-  res.write("var SOME_URL='" + process.env.SPACE_IDL + "'" + "\n");
-  res.write("var API_KEY='" + process.env.ACCESS_TOKEN + "'" + "\n");
-  res.end();
-});
+// app.get("/config.js", function(req, res) {
+//   res.write("var SOME_URL='" + process.env.SPACE_IDL + "'" + "\n");
+//   res.write("var API_KEY='" + process.env.ACCESS_TOKEN + "'" + "\n");
+//   res.end();
+// });
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
