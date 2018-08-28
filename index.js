@@ -2,12 +2,11 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
-// const KEYS = require("./config/prod_keys");
-// var api_key = KEYS.API_KEY;
-// var domain = KEYS.DOMAIN;
+const api_key = process.env.API_KEY;
+const domain = process.env.DOMAIN;
 var mailgun = require("mailgun-js")({
-  apiKey: process.env.API_KEY,
-  domain: process.env.DOMAIN
+  apiKey: api_key,
+  domain: domain
 });
 
 app.use(express.static(path.join(__dirname, "client/build")));
