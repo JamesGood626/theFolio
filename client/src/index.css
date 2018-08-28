@@ -2,9 +2,8 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  font-family: "Play", sans-serif;
+html, body {
+  font-family: 'Play', sans-serif;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -23,19 +22,21 @@ body {
 
 a {
   text-decoration: none;
-  color: #e3170a;
+  color: #E3170A;
 }
 
 a:hover {
-  color: #35e0f0;
+  color: #35E0F0;
 }
+
+
 
 .homeContainerDiv {
   height: 100vh;
-  width: 100vw;
+	width: 100vw;
   position: fixed;
   /* background-color: rgba(0,0,0,0); */
-}
+} 
 
 .ninjaStar {
   position: absolute;
@@ -49,7 +50,7 @@ a:hover {
   cursor: pointer;
 }
 
-@media (min-width: 742px) {
+@media (min-width: 742px) { 
   .ninjaStar {
     top: 40%;
     height: 5rem;
@@ -74,7 +75,7 @@ a:hover {
 
   /* added these to test out the other method for preventing scroll */
   margin: 0;
-  overflow-y: hidden;
+  overflow-y: hidden; 
   /*** 
   using overflow: hidden primarily for revealing modal nav text, but could help in more 
   complex page transition animations as well.
@@ -104,12 +105,12 @@ a:hover {
   height: 80vh;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background: url("./images/moto-350.png") no-repeat;
+  background: url('./images/moto-350.png') no-repeat;
 }
 
 @media (min-width: 472px) {
   .aboutBgImg {
-    background: url("./images/moto-472.png") no-repeat;
+    background: url('./images/moto-472.png') no-repeat;
   }
 }
 
@@ -117,34 +118,17 @@ a:hover {
   .aboutBgImg {
     height: 80vh;
     width: 80%;
-    background: url("./images/moto-665.png") no-repeat;
+    background: url('./images/moto-665.png') no-repeat;
   }
 }
-
+  
 @media (min-width: 1100px) {
   .aboutBgImg {
-    background: url("./images/moto-828.png") no-repeat;
+    background: url('./images/moto-828.png') no-repeat;
   }
 }
 
 .projectImage {
   height: 200px;
   width: 200px;
-}
-
-/* iPhone svg styles */
-.cls-1 {
-  fill: #000222;
-  stroke-width: 2px;
-}
-.cls-1,
-.cls-2,
-.cls-3 {
-  stroke: #7e89a3;
-}
-.cls-2 {
-  fill: #fff;
-}
-.cls-3 {
-  fill: none;
 }

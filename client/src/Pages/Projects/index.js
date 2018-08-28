@@ -1,28 +1,31 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { fetchPosts } from "../../actions";
-import styled from "styled-components";
-import Smackdown from "react-smackdown";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { fetchPosts } from '../../actions'
+import styled from 'styled-components'
+import Smackdown from 'react-smackdown'
+
 
 const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 100%;
   width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 2.4rem;
+
   @media (min-width: 700px) {
     width: 80%;
   }
-`;
+`
 
 const Div = styled.div`
   display: flex;
   flex-direction: column;
   color: #274156;
-`;
+`
 
 const PostDiv = Div.extend`
   margin: 1rem;
@@ -30,7 +33,7 @@ const PostDiv = Div.extend`
   height: 14rem;
   border: 2px solid #274156;
   line-height: 1.4rem;
-`;
+`
 
 const TitleDiv = Div.extend`
   text-align: center;
@@ -39,15 +42,15 @@ const TitleDiv = Div.extend`
   width: 100%;
   height: 5rem;
   font-size: 0.8rem;
-`;
+`
 
 class Blog extends Component {
   componentDidMount() {
-    if (Object.keys(this.props.posts).length === 0) {
-      this.props.fetchPosts();
+    if(Object.keys(this.props.posts).length === 0) {
+      this.props.fetchPosts()
     }
   }
-
+  
   //to access a single post
   // posts.data.items[1].fields.postBody
 
@@ -62,38 +65,34 @@ class Blog extends Component {
 
   render() {
     const mdStyle = {
-      margin: "0 1rem"
-    };
-    let postsArr = Object.entries(this.props.posts);
+      'margin': '0 1rem'
+    }
+    let postsArr = Object.entries(this.props.posts)
     return (
-      <Section>
-        {postsArr
-          ? postsArr.map((post, index) => {
-              return (
-                <PostDiv key={index}>
-                  <TitleDiv>
-                    <h2 id={post[0]}>{post[1].postStore.postTitle}</h2>
-                  </TitleDiv>
-                  <Smackdown
-                    style={mdStyle}
-                    source={post[1].postStore.postBody}
-                  />
-                </PostDiv>
-              );
-            })
-          : null}
-      </Section>
-    );
+        <Section>
+          { postsArr ? 
+              postsArr.map((post, index) => {
+                return(
+                  <PostDiv key={index}>
+                    <TitleDiv>
+                      <h2 id={ post[0] }>{ post[1].postStore.postTitle }</h2>
+                    </TitleDiv>
+                    <Smackdown style={ mdStyle } source={ post[1].postStore.postBody }/>
+                  </PostDiv>
+                )
+              }) 
+            : null 
+          } 
+        </Section>
+    )
   }
 }
 
+
 function mapStateToProps({ posts }) {
-  return { posts };
+  return { posts }
 }
 
-export default connect(
-  mapStateToProps,
-  { fetchPosts }
-)(Blog);
+export default connect(mapStateToProps, { fetchPosts })(Blog)
 
 // <Smackdown style={ cbStyle } source={ this.state.post.postStore.postBody } syntax={ syntax }/>
