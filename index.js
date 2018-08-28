@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
+// not the most ideal setup for dev, but should work for prod.
 const api_key = process.env.API_KEY;
 const domain = process.env.DOMAIN;
 var mailgun = require("mailgun-js")({
