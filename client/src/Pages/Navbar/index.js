@@ -37,7 +37,7 @@ const Li = styled.li`
   color: #828489;
 
   &:hover {
-    color: #d0ccd0;
+    color: #35e0f0;
   }
 
   @media screen and (min-width: 742px) {

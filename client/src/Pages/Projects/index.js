@@ -96,5 +96,4 @@ export default connect(
   mapStateToProps,
   { fetchPosts }
 )(Blog);
-
 // <Smackdown style={ cbStyle } source={ this.state.post.postStore.postBody } syntax={ syntax }/>
