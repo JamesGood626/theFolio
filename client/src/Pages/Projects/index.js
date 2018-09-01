@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { fetchPosts } from "../../actions";
 import styled from "styled-components";
 import Smackdown from "react-smackdown";
-
+// Need to update
 const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
