@@ -8,7 +8,7 @@ import Smackdown from "react-smackdown";
 const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
